@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.by_syk.schttable">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 不支持平板设备 -->
+    <supports-screens
+        android:xlargeScreens="false"
+        android:largeScreens="false"
+        android:largestWidthLimitDp="600" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".HelloActivity"
+            android:theme="@style/AppThemeHello" />
+
+        <activity
+            android:name=".SignInActivity"
+            android:label="@string/activity_sign_in"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppThemeHello">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- for Android 7.1 -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+
+        <activity
+            android:name=".HtmlTimetableActivity"
+            android:label="@string/activity_html">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/activity_settings" />
+
+        <service
+            android:name=".service.AppWidgetService"
+            android:label="@string/service"
+            android:description="@string/service_desc"
+            android:process=":service" />
+
+        <!-- TODO -->
+        <!--<receiver android:name=".receiver.CourseAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.by_syk.schttable.ACTION_APPWIDGET_DATA_OK" />
+                <action android:name="com.by_syk.schttable.ACTION_APPWIDGET_UPDATE" />
+                <action android:name="com.by_syk.schttable.ACTION_SIGN_OUT" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_info" />
+        </receiver>-->
+
+    </application>
+
+</manifest>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="80dp"
+    android:gravity="center_vertical"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="16dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp">
+
+        <View
+            android:id="@+id/view_highlight"
+            android:layout_width="6dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:paddingRight="@dimen/unit_padding"
+        android:paddingEnd="@dimen/unit_padding"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_course_time_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/secondary_text_dark"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_course_time_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/half_unit_padding"
+            android:textColor="@android:color/secondary_text_dark"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_busy"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:paddingRight="@dimen/unit_padding"
+        android:paddingEnd="@dimen/unit_padding"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_course_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit_padding"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/TintIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@drawable/ic_classroom" />
+
+            <TextView
+                android:id="@+id/tv_course_room"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_unit_padding"
+                android:layout_marginStart="@dimen/half_unit_padding"
+                android:layout_weight="1.0"
+                android:singleLine="true"
+                android:ellipsize="start"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="14sp" />
+
+            <ImageView
+                style="@style/TintIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_unit_padding"
+                android:layout_marginStart="@dimen/half_unit_padding"
+                android:scaleType="center"
+                android:src="@drawable/ic_lecturer" />
+
+            <TextView
+                android:id="@+id/tv_course_lecturer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_unit_padding"
+                android:layout_marginStart="@dimen/half_unit_padding"
+                android:layout_weight="1.0"
+                android:singleLine="true"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_merge"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/half_unit_padding"
+                android:layout_marginStart="@dimen/half_unit_padding"
+                android:tint="@color/color_accent"
+                android:scaleType="center"
+                android:src="@drawable/ic_merge" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dlg_vertical_padding"
+        android:paddingLeft="@dimen/dlg_horz_padding"
+        android:paddingRight="@dimen/dlg_horz_padding"
+        android:paddingTop="@dimen/dlg_vertical_padding"
+        android:shrinkColumns="1"
+        android:stretchColumns="1">
+
+        <TableRow>
+
+            <TextView
+                android:text="@string/tag_course_name"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="@dimen/unit_padding">
+
+            <TextView
+                android:text="@string/tag_course_room"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_room"
+                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="@dimen/unit_padding">
+
+            <TextView
+                android:text="@string/tag_course_lecturer"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_lecturer"
+                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="@dimen/unit_padding">
+
+            <TextView
+                android:text="@string/tag_course_order"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_order"
+                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="@dimen/unit_padding">
+
+            <TextView
+                android:text="@string/tag_course_time"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="@dimen/unit_padding">
+
+            <TextView
+                android:text="@string/tag_course_date"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow android:layout_marginTop="@dimen/unit_padding">
+
+            <TextView
+                android:text="@string/tag_course_week"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_week"
+                android:layout_marginLeft="@dimen/unit_padding"
+                android:layout_marginStart="@dimen/unit_padding"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>

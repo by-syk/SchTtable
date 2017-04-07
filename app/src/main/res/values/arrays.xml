@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="weekdays">
+        <item>Today</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+        <item>Next Mon.</item>
+        <item>Next Tues.</item>
+        <item>Next Wed.</item>
+        <item>Next Thur.</item>
+        <item>Next Fri.</item>
+        <item>Next Sat.</item>
+    </string-array>
+
+    <string-array name="weekdays_brief">
+        <item>M\nO\nN</item>
+        <item>T\nU\nE\nS</item>
+        <item>W\nE\nD</item>
+        <item>T\nH\nU\nR</item>
+        <item>F\nR\nI</item>
+        <item>S\nA\nT</item>
+        <item>S\nU\nN</item>
+    </string-array>
+
+    <string-array name="days">
+        <item>%dst</item>
+        <item>%dnd</item>
+        <item>%drd</item>
+        <item>%dth</item>
+    </string-array>
+
+</resources>

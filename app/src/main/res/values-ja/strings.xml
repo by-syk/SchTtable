@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ギーク時間割</string>
+    <string name="toast_welcome">ようこそ</string>
+    <string name="toast_cancel_login">キャンセルしました</string>
+    <string name="tag_me_term">学期</string>
+    <string name="tag_me_school">学校</string>
+    <string name="tag_me_name">名前</string>
+    <string name="tag_me_major">専攻</string>
+    <string name="tag_me_student_no">番号</string>
+    <string name="tag_me_academy">学部</string>
+    <string name="stu_no">学生番号</string>
+    <string name="tag_app_date">更新日</string>
+    <string name="tag_app_version">バージョン</string>
+    <string name="tag_course_date">日付</string>
+    <string name="tag_course_lecturer">講師</string>
+    <string name="school_name">学校</string>
+    <string name="sign_in">ログイン</string>
+    <string name="sign_out_desc">ログアウトしますか？</string>
+    <string name="status_empty">データなし</string>
+    <string name="status_loading">読み込み中&#8230;</string>
+    <string name="dia_title_detail">詳細</string>
+    <string name="dia_bt_ok">OK</string>
+    <string name="dia_bt_sign_out">ログアウト</string>
+    <string name="menu_sign_out">ログアウト</string>
+    <string name="menu_about_me">個人情報</string>
+    <string name="menu_donate">寄付</string>
+    <string name="password">パスワード</string>
+    <string name="menu_refresh">再読み込み</string>
+    <string name="menu_official_page">公式サイト</string>
+    <string name="tag_app_desc">新機能</string>
+    <string name="dia_bt_cancel">キャンセル</string>
+    <!--<string name="dia_title_about">アプリ情報</string>-->
+    <string name="dia_title_about_me">個人情報</string>
+    <string name="dia_title_new_app">最新バージョン</string>
+    <string name="days_left">あと %d 日</string>
+    <string name="dia_bt_got_it">OK</string>
+    <string name="dia_bt_download">ダウンロード</string>
+    <string name="menu_timetable_html">WEB版</string>
+    <string name="tag_me_before_summer_vocation">夏休</string>
+    <string name="tag_me_before_winter_vocation">冬休</string>
+    <string name="tag_me_before_vocation">休み</string>
+    <string name="tag_course_name">授業</string>
+    <string name="tag_course_order">時限</string>
+    <string name="tag_course_room">教室</string>
+    <string name="tag_course_time">時間</string>
+    <string name="error_empty_student_no">学生番号を入力してください</string>
+    <string name="error_empty_password">パスワードを入力してください</string>
+    <string name="dia_bt_donated">寄付済み</string>
+    <string name="dia_bt_close">閉じる</string>
+    <string name="tag_me_before_term">新学期</string>
+    <string name="toast_copied">コピーしました：%s</string>
+    <string name="tag_course_week">週目</string>
+    <string name="status_no_network">インターネット未接続 :(</string>
+    <string name="toast_no_network">インターネット未接続 :(</string>
+    <string name="toast_refreshing">読み込み中&#8230;</string>
+    <string name="toast_time_to_class_on">授業まで%d分</string>
+    <string name="status_error">エラーが発生しました :(</string>
+    <string name="toast_error">エラーが発生しました :(</string>
+    <string name="toast_no_school">学校を選択してください</string>
+    <string name="toast_time_to_class_over">授業終わるまで%d分</string>
+    <string name="menu_about">アプリ情報</string>
+    <string name="menu_new_app">アップデート</string>
+    <string name="activity_html">WEB版</string>
+    <string name="activity_sign_in">Geek\'s SchTtable へようこそ</string>
+    <string name="course_order">%s 時限目</string>
+    <string name="app_size_desc">サイズ：%s</string>
+    <string name="course_order_week">%s 週目</string>
+    <string name="course_order_morning">午前 %s 時限目</string>
+    <string name="course_order_evening">夜 %s 時限目</string>
+    <string name="course_order_afternoon">午後 %s 時限目</string>
+    <string name="refresh_desc">しばらくお待ちください&#8230;</string>
+    <string name="term2">%1$d-%2$d年第二学期</string>
+    <string name="term1">%1$d-%2$d年第一学期</string>
+    <string name="logining_desc">
+"ログインしています&#8230;
+1分かかります、お待ちください&#8230;"</string>
+    <string name="about_desc">
+"ギーク時間割、ギークなあなたに！
+\nCopyright &#169; 2016-2017 By_syk. All rights reserved."</string>
+    <!--<string name="refresh_failed_desc">
+"サーバーに接続できませんでした :(
+\n問題について：
+- 学生番号/パスワードが正しくありません
+- サーバーにアクセスできません"</string>-->
+    <string name="donate_desc">
+"ギーク時間割は個人開発者によって開発され、ずいぶん時間がかかりました。
+\nもしこのアプリが気に入りましたら、コーヒー1杯分の寄付で応援してください！
+\nAlipay：[By_syk@163.com](copy:By_syk@163.com)"</string>
+    <!--<string name="apply_school_desc">あなたの学校を追加したい場合、メールでご連絡してください。Eメール：[By_syk@163.com](copy:By_syk@163.com)</string>-->
+
+</resources>

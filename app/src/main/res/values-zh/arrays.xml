@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="weekdays">
+        <item>今天</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+        <item>周日</item>
+        <item>下周一</item>
+        <item>下周二</item>
+        <item>下周三</item>
+        <item>下周四</item>
+        <item>下周五</item>
+        <item>下周六</item>
+    </string-array>
+
+    <string-array name="weekdays_brief">
+        <item>周\n一</item>
+        <item>周\n二</item>
+        <item>周\n三</item>
+        <item>周\n四</item>
+        <item>周\n五</item>
+        <item>周\n六</item>
+        <item>周\n日</item>
+    </string-array>
+
+    <string-array name="days">
+        <item>%d</item>
+        <item>%d</item>
+        <item>%d</item>
+        <item>%d</item>
+    </string-array>
+
+</resources>

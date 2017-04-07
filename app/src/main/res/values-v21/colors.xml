@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_primary">#607d8b</color>
+    <color name="color_primary_dark">#455a64</color>
+    <color name="color_accent">#ff5252</color>
+
+    <!--<color name="color_cur">#ff5252</color>
+    <color name="color_next">#69f0ae</color>-->
+    <color name="color_cur">#f44336</color>
+    <color name="color_next">#4caf50</color>
+
+</resources>
