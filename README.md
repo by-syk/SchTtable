@@ -1,6 +1,6 @@
 # 极课项目APP
 
-转[极课项目后端服务](https://github.com/by-syk/SchTtableServer)
+转「[极课项目后端服务](https://github.com/by-syk/SchTtableServer)」
 
 
 ### License

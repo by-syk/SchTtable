@@ -12,6 +12,7 @@ import com.by_syk.schttable.bean.UserBean;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -44,6 +45,10 @@ public interface ServerService {
     @FormUrlEncoded
     Call<ResResBean<List<CourseBean>>> getDayCourses(@Field("userkey") String userKey,
                                                      @Field("date") long targetDateMillis);
+
+    @POST("common/coursepage.do")
+    @FormUrlEncoded
+    Call<ResponseBody> getCoursePage(@Field("userkey") String userKey);
 
     @POST("common/term.do")
     @FormUrlEncoded

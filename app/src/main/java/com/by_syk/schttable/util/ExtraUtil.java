@@ -11,12 +11,15 @@ import android.net.Uri;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.Locale;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 /**
  * Created by By_syk on 2016-08-30.
@@ -96,7 +99,49 @@ public class ExtraUtil {
     }
 
     public static boolean unzip(File zipFile, File targetDir) {
-        // TODO
+        if (zipFile == null || !zipFile.exists() || targetDir == null) {
+            return false;
+        }
+        targetDir.mkdirs();
+
+        InputStream inputStream = null;
+        ZipInputStream zis = null;
+        try {
+            inputStream = new FileInputStream(zipFile);
+            zis = new ZipInputStream(inputStream);
+            ZipEntry zipEntry;
+            while ((zipEntry = zis.getNextEntry()) != null) {
+                if (zipEntry.isDirectory()) {
+                    (new File(targetDir, zipEntry.getName())).mkdirs();
+                    continue;
+                }
+                OutputStream osEntity = new FileOutputStream(new File(targetDir, zipEntry.getName()));
+                byte[] buffer = new byte[1024];
+                int len;
+                while ((len = zis.read(buffer)) != -1) {
+                    osEntity.write(buffer, 0, len);
+                }
+                osEntity.close();
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (zis != null) {
+                try {
+                    zis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         return false;
     }
 

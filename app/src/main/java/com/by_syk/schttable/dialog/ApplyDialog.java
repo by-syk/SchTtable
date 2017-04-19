@@ -30,14 +30,14 @@ import retrofit2.Response;
  */
 
 public class ApplyDialog extends DialogFragment {
-    private int numSupported = -1;
+    private int numSupported = 0;
 
     private boolean isExecuted = false;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         numSupported = getArguments().getInt("numSupported");
-        String text = getString(R.string.apply_school_desc, numSupported, -1, "...");
+        String text = getString(R.string.apply_school_desc, numSupported, 0, "...");
         SpannableString message = AboutMsgRender.render(getActivity(), text);
 
         return new AlertDialog.Builder(getActivity())
@@ -78,7 +78,7 @@ public class ApplyDialog extends DialogFragment {
             @Override
             public void onResponse(Call<ResResBean<List<SchoolTodoBean>>> call, Response<ResResBean<List<SchoolTodoBean>>> response) {
                 ResResBean<List<SchoolTodoBean>> resResBean = response.body();
-                if (!resResBean.isStatusSuccess()) {
+                if (resResBean == null || !resResBean.isStatusSuccess()) {
                     return;
                 }
                 fillApplicationData(resResBean.getResult());

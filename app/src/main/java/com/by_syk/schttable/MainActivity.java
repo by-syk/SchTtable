@@ -104,7 +104,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onResponse(Call<ResResBean<AppVerBean>> call, Response<ResResBean<AppVerBean>> response) {
                 ResResBean<AppVerBean> resResBean = response.body();
-                if (!resResBean.isStatusSuccess()) {
+                if (resResBean == null || !resResBean.isStatusSuccess()) {
                     return;
                 }
                 appVerBean = resResBean.getResult();
@@ -154,9 +154,8 @@ public class MainActivity extends FragmentActivity {
                 return true;
             }
             case R.id.menu_html: {
-                // TODO
-//                item.setIntent(new Intent(this, HtmlTimetableActivity.class)
-//                        .putExtra("backable", true));
+                item.setIntent(new Intent(this, HtmlTimetableActivity.class)
+                        .putExtra("backable", true));
                 return super.onOptionsItemSelected(item);
             }
             case R.id.menu_about_me:

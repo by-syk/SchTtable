@@ -16,6 +16,14 @@ import com.by_syk.lib.storage.SP;
 import com.by_syk.lib.toast.GlobalToast;
 import com.by_syk.schttable.util.C;
 import com.by_syk.schttable.util.ExtraUtil;
+import com.by_syk.schttable.util.RetrofitHelper;
+import com.by_syk.schttable.util.impl.ServerService;
+
+import java.io.File;
+import java.io.IOException;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
 
 /**
  * Created by By_syk on 2016-11-14.
@@ -61,7 +69,7 @@ public class HtmlTimetableActivity extends Activity {
         webSettings.setDisplayZoomControls(false);
     }
 
-    private class LoadTimetableHtmlTask extends AsyncTask<Boolean, Integer, String> {
+    private class LoadTimetableHtmlTask extends AsyncTask<Boolean, Integer, File> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -72,20 +80,44 @@ public class HtmlTimetableActivity extends Activity {
         }
 
         @Override
-        protected String doInBackground(Boolean... booleans) {
-//            return TimetableTool.getCoursePage(HtmlTimetableActivity.this, sp.getString("userKey"),
-//                    booleans[0], ExtraUtil.isNetworkConnected(HtmlTimetableActivity.this));
-            // TODO
+        protected File doInBackground(Boolean... booleans) {
+            boolean forceRefresh = booleans[0];
+            String userKey = sp.getString("userKey");
+            File zipFile = new File(getCacheDir(), "timetable_" + userKey + ".zip");
+            File timetableDir = new File(getCacheDir(), "timetable_" + userKey);
+            File indexHtmlFile = new File(timetableDir, "index.html");
+            if (!forceRefresh && indexHtmlFile.exists()) {
+                return indexHtmlFile;
+            }
+
+            if (!ExtraUtil.isNetworkConnected(HtmlTimetableActivity.this)) {
+                return null;
+            }
+
+            Call<ResponseBody> call = RetrofitHelper.getInstance().getService(ServerService.class).
+                    getCoursePage(userKey);
+            try {
+                ResponseBody responseBody = call.execute().body();
+                boolean ok = RetrofitHelper.downloadFile(responseBody, zipFile);
+                if (ok) {
+                    ok = ExtraUtil.unzip(zipFile, timetableDir);
+                    if (ok && indexHtmlFile.exists()) {
+                        return indexHtmlFile;
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return null;
         }
 
         @Override
-        protected void onPostExecute(String data) {
-            super.onPostExecute(data);
+        protected void onPostExecute(File result) {
+            super.onPostExecute(result);
 
-            if (data != null) {
-//                webView.loadData(data, "text/html", "UTF-8");
-                webView.loadData(data, "text/html;charset=UTF-8", null);
+            if (result != null) {
+//                webView.loadData(result, "text/html", "UTF-8");
+                webView.loadUrl(Uri.fromFile(result).toString());
             } else {
                 webView.loadData(getString(R.string.status_error), "text/html;charset=UTF-8", null);
             }

@@ -183,7 +183,7 @@ public class DayCoursesFragment extends Fragment {
             Call<ResResBean<List<CourseBean>>> call = service.getDayCourses(userKey, dateMillis);
             try {
                 ResResBean<List<CourseBean>> resResBean = call.execute().body();
-                if (resResBean.isStatusSuccess()) {
+                if (resResBean != null && resResBean.isStatusSuccess()) {
                     return resResBean.getResult();
                 }
             } catch (IOException e) {

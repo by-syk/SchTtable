@@ -8,12 +8,12 @@ android {
         applicationId "com.by_syk.schttable"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 17040700
+        versionCode 17041900
         versionName "1.1.1.nightly"
 
         resConfigs "en", "zh_cn"
 
-        //vectorDrawables.generatedDensities = ['hdpi', 'xhdpi', 'xxhdpi']
+//        vectorDrawables.generatedDensities = ['hdpi', 'xhdpi', 'xxhdpi', 'xxxhdpi']
     }
 
     buildTypes {

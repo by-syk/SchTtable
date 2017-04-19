@@ -10,8 +10,8 @@ public class C {
 
     public static final String LOG_TAG = "SCHTTABLE";
 
-//    public static String BASE_URL_SERVER = "http://schttable.by-syk.com/";
-    public static String BASE_URL_SERVER = "http://192.168.43.76:8080/SchTtable/";
+    public static String BASE_URL_SERVER = "https://schttable.by-syk.com/";
+//    public static String BASE_URL_SERVER = "http://192.168.43.76:8080/SchTtableServer/";
 
     public static final int STATUS_LOADING = 0; // 正在加载
     public static final int STATUS_OK = 1; // 一切正常

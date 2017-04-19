@@ -75,7 +75,7 @@ public class RefreshingDialog extends DialogFragment {
             StatusBean statusBean = new StatusBean();
             try {
                 ResResBean<StatusBean> resResBean = call.execute().body();
-                if (!resResBean.isStatusSuccess()) {
+                if (resResBean == null || !resResBean.isStatusSuccess()) {
                     return statusBean;
                 }
                 statusBean = resResBean.getResult();

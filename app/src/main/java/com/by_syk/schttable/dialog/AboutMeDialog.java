@@ -88,7 +88,7 @@ public class AboutMeDialog extends DialogFragment {
             @Override
             public void onResponse(Call<ResResBean<TermBean>> call, Response<ResResBean<TermBean>> response) {
                 ResResBean<TermBean> resResBean = response.body();
-                if (!resResBean.isStatusSuccess()) {
+                if (resResBean == null || !resResBean.isStatusSuccess()) {
                     return;
                 }
                 fillTermData(resResBean.getResult());

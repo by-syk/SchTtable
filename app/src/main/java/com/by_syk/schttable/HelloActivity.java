@@ -110,7 +110,7 @@ public class HelloActivity extends Activity {
             Call<ResResBean<ArrayList<SchoolBean>>> call = service.getSupportedSchools();
             try {
                 ResResBean<ArrayList<SchoolBean>> resResBean = call.execute().body();
-                if (!resResBean.isStatusSuccess()) {
+                if (resResBean == null || !resResBean.isStatusSuccess()) {
                     waitMoment();
                     return null;
                 }

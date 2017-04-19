@@ -241,7 +241,7 @@ public class SignInActivity extends Activity {
             @Override
             public void onResponse(Call<ResResBean<AppVerBean>> call, Response<ResResBean<AppVerBean>> response) {
                 ResResBean<AppVerBean> resResBean = response.body();
-                if (!resResBean.isStatusSuccess()) {
+                if (resResBean == null || !resResBean.isStatusSuccess()) {
                     return;
                 }
                 appVerBean = resResBean.getResult();
@@ -400,7 +400,7 @@ public class SignInActivity extends Activity {
                                   String schoolCode, String enStuNo, String enPwd) throws IOException {
             Call<ResResBean<StatusBean>> call = serverService.signIn(schoolCode, enStuNo, enPwd);
             ResResBean<StatusBean> resResBean = call.execute().body();
-            if (!resResBean.isStatusSuccess()) {
+            if (resResBean == null || !resResBean.isStatusSuccess()) {
                 return new StatusBean();
             }
             StatusBean statusBean = resResBean.getResult();
