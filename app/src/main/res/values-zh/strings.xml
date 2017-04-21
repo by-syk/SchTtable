@@ -72,7 +72,7 @@
     <string name="course_order_evening">晚上第 %s 节</string>
     <string name="course_order_week">第 %s 周</string>
     <string name="about_desc">
-"「极课」是一款高校课表APP，删繁就简、专注如一。
+"「极课」是一款轻量的高校课表APP，删繁就简、专注如一。
 \nCopyright &#169; 2016-2017 By_syk. All rights reserved."</string>
     <string name="refresh_desc">当前数据来自服务器的一次缓存并长期使用，因此可能过期。如有必要可请求服务器立即刷新全部数据。</string>
     <string name="refreshing_desc">正在请求服务器刷新数据。这可能会花费一分钟，完成后会自动重启App，请耐心等待&#8230;</string>
@@ -103,7 +103,7 @@
     <string name="sign_out_desc">是否注销？</string>
     <string name="donate_desc">
 "极课是个人开发与维护的一款自动抓课课表软件，完全免费，没有任何收入。
-\n如果你的学校已被支持，并且觉得不错，可以考虑赞助我。所有捐赠将用于维护服务器以及提升工作配置。
+\n如果你的学校已被支持，并且觉得不错，可以考虑赞助我。所有捐赠将用于维护服务器运作以及提高我适配更多学校的积极性。
 \n支付宝：[By_syk@163.com](alipay:https://qr.alipay.com/aex05154fiiurupx5ai0dd1|By_syk@163.com)"</string>
     <string name="tag_app_version">版本</string>
     <string name="tag_app_desc">描述</string>
@@ -116,7 +116,7 @@
     <string name="apply_school_desc">
 "除已支持的%1$d所学校，另有%2$d所学校在申请之列：%3$s。
 \n如果您喜欢这款App并且愿意使用，但学校不在支持之列，也不在申请之列，不妨联系我并协助以支持。我的邮箱：[By_syk@163.com](copy:By_syk@163.com)
-\n写在最后：此为个人兴趣之作，也因个人开发与维护，时间精力能力有限，难免出现一些问题，望体谅。"</string>
+\n写在最后：此为个人兴趣之作，也因个人开发与维护，时间精力能力有限，所以支持的学校不多，望体谅。"</string>
     <string name="char_split">、</string>
     <string name="email_subject_apply">极课：申请支持学校</string>
     <string name="visit_official_page">[访问校官网&#8230;](%s)</string>

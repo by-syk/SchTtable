@@ -17,7 +17,7 @@
 #}
 
 # for OkHttp
-# -dontwarn okio.**
+-dontwarn okio.**
 
 # for Retrofit
 # Platform calls Class.forName on types which do not exist on Android to determine platform.

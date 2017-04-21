@@ -67,6 +67,7 @@ public class HtmlTimetableActivity extends Activity {
         webSettings.setSupportZoom(true);
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
+        webSettings.setDefaultTextEncodingName("utf-8");
     }
 
     private class LoadTimetableHtmlTask extends AsyncTask<Boolean, Integer, File> {
@@ -133,12 +134,13 @@ public class HtmlTimetableActivity extends Activity {
 
         // https://developer.chrome.com/multidevice/android/customtabs
 
-        CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder()
-                .setShowTitle(true)
-                .setToolbarColor(getResources().getColor(R.color.color_primary))
-                .setSecondaryToolbarColor(getResources().getColor(R.color.color_primary_dark))
-                .build();
-        customTabsIntent.launchUrl(this, Uri.parse(url));
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder()
+                .setShowTitle(true);
+        if (C.SDK >= 21) {
+            builder.setToolbarColor(getResources().getColor(R.color.color_primary))
+                    .setSecondaryToolbarColor(getResources().getColor(R.color.color_primary_dark));
+        }
+        builder.build().launchUrl(this, Uri.parse(url));
     }
 
     @Override

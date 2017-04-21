@@ -112,13 +112,13 @@
                 android:textSize="14sp" />
 
             <ImageView
+                style="@style/TintMergeIcon"
                 android:id="@+id/iv_merge"
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/half_unit_padding"
                 android:layout_marginStart="@dimen/half_unit_padding"
-                android:tint="@color/color_accent"
                 android:scaleType="center"
                 android:src="@drawable/ic_merge" />
 

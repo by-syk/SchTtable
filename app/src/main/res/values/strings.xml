@@ -74,7 +74,7 @@
     <string name="course_order_evening">Evening %s</string>
     <string name="course_order_week">Week %s</string>
     <string name="about_desc">
-"SchTtable, a simple school timetable. Just enter the account for signing in your school website, and enjoy it.
+"SchTtable is an university timetable app. SIMPLE, BRIEF and CLEAR.
 \nCopyright &#169; 2016-2017 By_syk. All rights reserved."</string>
     <string name="refresh_desc">The server catches data once and uses it for a long time. And the data may lose efficacy. If necessary, refresh now.</string>
     <string name="refreshing_desc">Asking server for refreshing. This may take one minute and then the app will be restarted automatically. Please wait for a moment&#8230;</string>

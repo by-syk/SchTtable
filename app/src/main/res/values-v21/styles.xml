@@ -20,6 +20,10 @@
         <item name="android:tint">@android:color/secondary_text_dark</item>
     </style>
 
+    <style name="TintMergeIcon">
+        <item name="android:tint">@color/color_accent</item>
+    </style>
+
     <style name="TintSectionIcon">
         <item name="android:tint">@android:color/tertiary_text_dark</item>
     </style>
