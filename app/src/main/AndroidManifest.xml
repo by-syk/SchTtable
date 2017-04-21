@@ -58,8 +58,7 @@
             android:description="@string/service_desc"
             android:process=":service" />
 
-        <!-- TODO -->
-        <!--<receiver android:name=".receiver.CourseAppWidgetProvider">
+        <receiver android:name=".receiver.CourseAppWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="com.by_syk.schttable.ACTION_APPWIDGET_DATA_OK" />
@@ -69,7 +68,7 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/appwidget_info" />
-        </receiver>-->
+        </receiver>
 
     </application>
 

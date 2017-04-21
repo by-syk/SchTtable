@@ -19,11 +19,11 @@ import com.by_syk.schttable.bean.FullUserBean;
 import com.by_syk.schttable.bean.ResResBean;
 import com.by_syk.schttable.dialog.AboutDialog;
 import com.by_syk.schttable.dialog.AboutMeDialog;
-import com.by_syk.schttable.fargment.DayCoursesFragment;
 import com.by_syk.schttable.dialog.DonateDialog;
 import com.by_syk.schttable.dialog.NewAppDialog;
 import com.by_syk.schttable.dialog.RefreshDialog;
 import com.by_syk.schttable.dialog.SignOutDialog;
+import com.by_syk.schttable.fargment.DayCoursesFragment;
 import com.by_syk.schttable.util.C;
 import com.by_syk.schttable.util.DateUtil;
 import com.by_syk.schttable.util.RetrofitHelper;
@@ -193,6 +193,7 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
+//            return DayCoursesFragment.newInstance(DateUtil.addDate(position));
             return DayCoursesFragment.newInstance(DateUtil.addDate(position));
         }
 

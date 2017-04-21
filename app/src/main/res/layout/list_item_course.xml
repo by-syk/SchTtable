@@ -5,7 +5,8 @@
     android:minHeight="80dp"
     android:gravity="center_vertical"
     android:baselineAligned="false"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="?android:attr/selectableItemBackground">
 
     <LinearLayout
         android:layout_width="16dp"

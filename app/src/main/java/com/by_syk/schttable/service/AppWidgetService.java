@@ -10,14 +10,19 @@ import android.util.Log;
 
 import com.by_syk.schttable.bean.BriefCourseBean;
 import com.by_syk.schttable.bean.CourseBean;
+import com.by_syk.schttable.bean.ResResBean;
 import com.by_syk.schttable.util.C;
 import com.by_syk.schttable.util.CourseSQLiteHelper;
 import com.by_syk.schttable.util.DateUtil;
 import com.by_syk.schttable.util.ExtraUtil;
+import com.by_syk.schttable.util.RetrofitHelper;
+import com.by_syk.schttable.util.impl.ServerService;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import retrofit2.Call;
 
 /**
  * Created by By_syk on 2016-11-29.
@@ -121,8 +126,17 @@ public class AppWidgetService extends Service {
         if (list == null || list.isEmpty()) {
             if (ExtraUtil.isNetworkConnected(this)) {
 //                list = TimetableTool.getCourses(spUserKey, date.getTime());
-                // TODO
-                sqLiteHelper.saveDayCourses(spUserKey, list);
+                ServerService service = RetrofitHelper.getInstance().getService(ServerService.class);
+                Call<ResResBean<List<CourseBean>>> call = service.getDayCourses(spUserKey, date.getTime());
+                try {
+                    ResResBean<List<CourseBean>> resResBean = call.execute().body();
+                    if (resResBean != null && resResBean.isStatusSuccess()) {
+                        list = resResBean.getResult();
+                        sqLiteHelper.saveDayCourses(spUserKey, list);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             } else {
                 list = null;
             }

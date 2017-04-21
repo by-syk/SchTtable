@@ -2,6 +2,7 @@ package com.by_syk.schttable.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.TextUtils;
 
 /**
  * Created by By_syk on 2016-11-29.
@@ -9,38 +10,34 @@ import android.os.Parcelable;
 
 public class BriefCourseBean implements Parcelable {
     // 课程名
-    private String name = "";
+    private String name;
 
     // 教室名缩写
-    private String roomAbbr = "";
+    private String roomAbbr;
 
     // 节次（1~
-    private int courseOrder = 0;
+    private int courseOrder;
 
     // 节数（1~
-    private int courseNum = 0;
+    private int courseNum;
 
     // 上课时间
-    private long timeStart = 0;
+    private long timeStart;
 
     // 下课时间
-    private long timeEnd = 0;
+    private long timeEnd;
 
     // 无课
-    private boolean sleep = false;
+    private boolean sleep;
 
     public BriefCourseBean() {}
 
     public void setName(String name) {
-        if (name != null && !name.equals("null")) {
-            this.name = name;
-        }
+        this.name = name;
     }
 
     public void setRoomAbbr(String roomAbbr) {
-        if (roomAbbr != null && !roomAbbr.equals("null")) {
-            this.roomAbbr = roomAbbr;
-        }
+        this.roomAbbr = roomAbbr;
     }
 
     public void setCourseOrder(int courseOrder) {
@@ -112,7 +109,10 @@ public class BriefCourseBean implements Parcelable {
             return false;
         }
 
-        return name.equals(courseBean.getName()) && roomAbbr.equals(courseBean.getRoomAbbr());
+        return ((TextUtils.isEmpty(name) && TextUtils.isEmpty(courseBean.getName()))
+                || (name != null && name.equals(courseBean.getName())))
+                && ((TextUtils.isEmpty(roomAbbr) && TextUtils.isEmpty(courseBean.getRoomAbbr()))
+                || (roomAbbr != null && roomAbbr.equals(courseBean.getRoomAbbr())));
     }
 
     protected BriefCourseBean(Parcel in) {

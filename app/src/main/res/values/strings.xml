@@ -125,5 +125,8 @@ This may take one minute."</string>
     <string name="email_subject_apply">SchTtable: Apply for new school</string>
     <string name="visit_official_page">[Visit official page&#8230;](%s)</string>
     <string name="downloading_desc">Downloading&#8230;</string>
+    <string name="section_morning">Morning</string>
+    <string name="section_afternoon">Afternoon</string>
+    <string name="section_evening">Evening</string>
 
 </resources>

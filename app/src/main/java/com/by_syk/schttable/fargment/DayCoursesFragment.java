@@ -5,29 +5,29 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.by_syk.lib.storage.SP;
 import com.by_syk.schttable.R;
+import com.by_syk.schttable.bean.CourseBean;
 import com.by_syk.schttable.bean.ResResBean;
 import com.by_syk.schttable.dialog.CourseDialog;
-import com.by_syk.schttable.bean.CourseBean;
 import com.by_syk.schttable.util.C;
-import com.by_syk.schttable.util.RetrofitHelper;
-import com.by_syk.schttable.util.adapter.CourseAdapter;
 import com.by_syk.schttable.util.CourseSQLiteHelper;
 import com.by_syk.schttable.util.DateUtil;
 import com.by_syk.schttable.util.ExtraUtil;
+import com.by_syk.schttable.util.RetrofitHelper;
+import com.by_syk.schttable.util.adapter.CourseAdapter;
 import com.by_syk.schttable.util.impl.ServerService;
+import com.by_syk.schttable.widget.DividerItemDecoration;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -42,9 +42,8 @@ public class DayCoursesFragment extends Fragment {
 
     private View contentView;
     private TextView tvHint;
-    private ListView listView;
+    private RecyclerView recyclerView;
 
-    private List<CourseBean> dataList;
     private CourseAdapter adapter;
 
     private long dateMillis;
@@ -52,16 +51,6 @@ public class DayCoursesFragment extends Fragment {
     private CourseSQLiteHelper sqLiteHelper;
 
     private boolean isTaskRunning = false;
-
-    public static DayCoursesFragment newInstance(Date date) {
-        DayCoursesFragment dayCoursesFragment = new DayCoursesFragment();
-
-        Bundle bundle = new Bundle();
-        bundle.putLong("date", DateUtil.toDayDate(date).getTime());
-        dayCoursesFragment.setArguments(bundle);
-
-        return dayCoursesFragment;
-    }
 
     @Override
     public void onAttach(Context context) {
@@ -86,6 +75,15 @@ public class DayCoursesFragment extends Fragment {
         return contentView;
     }
 
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//
+//        if (getUserVisibleHint() && adapter != null && adapter.getItemCount() > 0) {
+//            adapter.updateHighlight();
+//        }
+//    }
+
     private void init() {
         tvHint = (TextView) contentView.findViewById(R.id.tv_hint);
         tvHint.setOnClickListener(new View.OnClickListener() {
@@ -98,27 +96,38 @@ public class DayCoursesFragment extends Fragment {
             }
         });
 
-        listView = (ListView) contentView.findViewById(R.id.lv_courses);
-        listView.setEmptyView(tvHint);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        recyclerView = (RecyclerView) contentView.findViewById(R.id.rv_courses);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
+                DividerItemDecoration.VERTICAL));
+
+        adapter = new CourseAdapter(getActivity());
+        adapter.setOnItemClickListener(new CourseAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onClick(int pos, CourseBean bean) {
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("bean", adapter.getItem(i));
+                bundle.putSerializable("bean", adapter.getItem(pos));
                 CourseDialog courseDialog = new CourseDialog();
                 courseDialog.setArguments(bundle);
                 courseDialog.show(getActivity().getFragmentManager(), "courseDialog");
             }
         });
-
-        dataList = new ArrayList<>();
-        adapter = new CourseAdapter(getActivity(), dataList);
-        listView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
 
         Bundle bundle = getArguments();
         if (bundle != null) {
             dateMillis = bundle.getLong("date");
         }
+    }
+
+    public static DayCoursesFragment newInstance(Date date) {
+        DayCoursesFragment dayCoursesFragment = new DayCoursesFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putLong("date", DateUtil.toDayDate(date).getTime());
+        dayCoursesFragment.setArguments(bundle);
+
+        return dayCoursesFragment;
     }
 
     private class LoadTimetableTask extends AsyncTask<String, Integer, List<CourseBean>> {
@@ -170,11 +179,8 @@ public class DayCoursesFragment extends Fragment {
             } else if (list.isEmpty()) {
                 tvHint.setText(R.string.status_empty);
             } else {
-//                adapter = new CourseAdapter(getActivity(), list);
-//                listView.setAdapter(adapter);
-                dataList.clear();
-                dataList.addAll(list);
-                adapter.notifyDataSetChanged();
+                tvHint.setVisibility(View.GONE);
+                adapter.refresh(list);
             }
         }
 

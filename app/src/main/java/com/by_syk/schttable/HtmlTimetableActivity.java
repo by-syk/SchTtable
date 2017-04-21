@@ -133,11 +133,12 @@ public class HtmlTimetableActivity extends Activity {
 
         // https://developer.chrome.com/multidevice/android/customtabs
 
-        CustomTabsIntent.Builder customTabsIntentBuilder = new CustomTabsIntent.Builder();
-        if (C.SDK >= 21) {
-            customTabsIntentBuilder.setToolbarColor(getResources().getColor(R.color.color_primary));
-        }
-        customTabsIntentBuilder.build().launchUrl(this, Uri.parse(url));
+        CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder()
+                .setShowTitle(true)
+                .setToolbarColor(getResources().getColor(R.color.color_primary))
+                .setSecondaryToolbarColor(getResources().getColor(R.color.color_primary_dark))
+                .build();
+        customTabsIntent.launchUrl(this, Uri.parse(url));
     }
 
     @Override
