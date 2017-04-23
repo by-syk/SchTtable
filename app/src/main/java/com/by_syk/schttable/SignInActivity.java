@@ -197,25 +197,24 @@ public class SignInActivity extends Activity {
                     new AccountInputFilter(schoolBean.getStuNoRegex())});
         }
 
-//                if (schoolBean.getCode().equals(sp.getString("schoolCode"))) {
-//                    etStuNo.setText(sp.getString("stuNo"));
-//                } else {
-//                    etStuNo.setText("");
-//                }
-//
-//                etPassword.setText("");
-        // TODO DEBUG
         String stuNo = sp.getString("stuNo-" + schoolBean.getCode());
         if (!TextUtils.isEmpty(stuNo)) {
             etStuNo.setText(stuNo);
-            String password = NetEncryptUtil.decrypt(sp.getString("pwd-" + stuNo));
-            if (password.length() > stuNo.length()) {
-                etPassword.setText(password.substring(stuNo.length()));
-            }
         } else {
             etStuNo.setText("");
-            etPassword.setText("");
         }
+        etPassword.setText("");
+        // TODO DEBUG
+//        if (!TextUtils.isEmpty(stuNo)) {
+//            etStuNo.setText(stuNo);
+//            String password = NetEncryptUtil.decrypt(sp.getString("pwd-" + stuNo));
+//            if (password.length() > stuNo.length()) {
+//                etPassword.setText(password.substring(stuNo.length()));
+//            }
+//        } else {
+//            etStuNo.setText("");
+//            etPassword.setText("");
+//        }
 
         // 显示访问官网的链接
         String linkText = getString(R.string.visit_official_page, schoolBean.getUrl());
@@ -357,9 +356,10 @@ public class SignInActivity extends Activity {
                         .put("academy", userBean.getAcademy()).put("major", userBean.getMajor())
                         .put("userName", userBean.getUserName()).put("stuNo", stuNo).save();
 
+                sp.save("stuNo-" + schoolBean.getCode(), stuNo);
                 // TODO DEBUG
-                sp.put("stuNo-" + schoolBean.getCode(), stuNo)
-                        .put("pwd-" + stuNo, enPwd).save();
+//                sp.put("stuNo-" + schoolBean.getCode(), stuNo)
+//                        .put("pwd-" + stuNo, enPwd).save();
             } catch (IOException e) {
                 e.printStackTrace();
             }
