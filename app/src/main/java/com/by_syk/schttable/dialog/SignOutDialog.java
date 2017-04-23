@@ -12,6 +12,7 @@ import com.by_syk.schttable.HelloActivity;
 import com.by_syk.schttable.R;
 import com.by_syk.schttable.util.C;
 import com.by_syk.schttable.util.CourseSQLiteHelper;
+import com.by_syk.schttable.util.ExtraUtil;
 
 /**
  * Created by By_syk on 2016-11-17.
@@ -37,6 +38,8 @@ public class SignOutDialog extends DialogFragment {
         // 清空本地缓存
         CourseSQLiteHelper sqLiteHelper = CourseSQLiteHelper.getInstance(getActivity());
         sqLiteHelper.deleteCourses(sp.getString("userKey"));
+
+        ExtraUtil.clearDir(getActivity().getCacheDir());
 
         sp.delete("userKey");
 

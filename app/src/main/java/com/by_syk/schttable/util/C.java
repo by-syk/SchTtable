@@ -5,6 +5,7 @@ import android.os.Build;
 /**
  * Created by By_syk on 2016-07-16.
  */
+
 public class C {
     public static final int SDK = Build.VERSION.SDK_INT;
 
@@ -13,6 +14,7 @@ public class C {
     public static String BASE_URL_SERVER = "https://schttable.by-syk.com/";
 //    public static String BASE_URL_SERVER = "http://192.168.43.76:8080/SchTtableServer/";
 //    public static String BASE_URL_SERVER = "http://192.168.31.108:8080/SchTtableServer/";
+//    public static String BASE_URL_SERVER = "http://192.168.1.20:8080/SchTtableServer/";
 
     public static final int STATUS_LOADING = 0; // 正在加载
     public static final int STATUS_OK = 1; // 一切正常

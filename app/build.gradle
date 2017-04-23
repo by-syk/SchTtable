@@ -8,8 +8,8 @@ android {
         applicationId "com.by_syk.schttable"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 17042100
-        versionName "1.2.1"
+        versionCode 17042300
+        versionName "1.2.2"
 
         resConfigs "en", "zh_cn"//, "ja"
 

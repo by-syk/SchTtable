@@ -11,7 +11,6 @@ import android.net.Uri;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -112,10 +111,11 @@ public class ExtraUtil {
             ZipEntry zipEntry;
             while ((zipEntry = zis.getNextEntry()) != null) {
                 if (zipEntry.isDirectory()) {
-                    (new File(targetDir, zipEntry.getName())).mkdirs();
                     continue;
                 }
-                OutputStream osEntity = new FileOutputStream(new File(targetDir, zipEntry.getName()));
+                File file = new File(targetDir, zipEntry.getName());
+                file.getParentFile().mkdirs();
+                OutputStream osEntity = new FileOutputStream(file);
                 byte[] buffer = new byte[1024];
                 int len;
                 while ((len = zis.read(buffer)) != -1) {
@@ -207,5 +207,20 @@ public class ExtraUtil {
         }
 
         return 0;
+    }
+
+    public static boolean clearDir(File dir) {
+        if (dir == null || !dir.exists()) {
+            return false;
+        }
+        boolean ok = true;
+        for (File file : dir.listFiles()) {
+            if (file.isDirectory()) {
+                ok &= clearDir(file);
+                continue;
+            }
+            ok &= file.delete();
+        }
+        return dir.delete();
     }
 }
