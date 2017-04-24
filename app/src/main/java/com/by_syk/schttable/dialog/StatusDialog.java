@@ -27,7 +27,7 @@ public class StatusDialog extends DialogFragment {
 
         return new AlertDialog.Builder(getActivity())
                 .setMessage(text)
-                .setPositiveButton(R.string.dia_bt_close, null)
+                .setPositiveButton(R.string.dlg_bt_close, null)
                 .create();
     }
 

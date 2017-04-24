@@ -61,9 +61,9 @@ public class AboutMeDialog extends DialogFragment {
         tvTagDays = (TextView) viewGroup.findViewById(R.id.tv_tag_before_vocation);
 
         return new AlertDialog.Builder(getActivity())
-                .setTitle(R.string.dia_title_about_me)
+                .setTitle(R.string.dlg_title_about_me)
                 .setView(viewGroup)
-                .setPositiveButton(R.string.dia_bt_got_it, null)
+                .setPositiveButton(R.string.dlg_bt_got_it, null)
                 .create();
     }
 

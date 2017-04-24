@@ -23,7 +23,7 @@ public class SignOutDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new AlertDialog.Builder(getActivity())
                 .setMessage(R.string.sign_out_desc)
-                .setPositiveButton(R.string.dia_bt_sign_out, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.dlg_bt_sign_out, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         signOut();

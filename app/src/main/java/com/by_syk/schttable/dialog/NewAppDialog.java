@@ -38,9 +38,9 @@ public class NewAppDialog extends DialogFragment {
         }
 
         return new AlertDialog.Builder(getActivity())
-                .setTitle(R.string.dia_title_new_app)
+                .setTitle(R.string.dlg_title_new_app)
                 .setView(viewGroup)
-                .setPositiveButton(R.string.dia_bt_download, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.dlg_bt_download, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(Intent.ACTION_VIEW);

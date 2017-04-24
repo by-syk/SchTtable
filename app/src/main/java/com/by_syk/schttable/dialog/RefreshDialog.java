@@ -19,7 +19,7 @@ public class RefreshDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new AlertDialog.Builder(getActivity())
                 .setMessage(R.string.refresh_desc)
-                .setPositiveButton(R.string.dia_bt_refresh, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.dlg_bt_refresh, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (!ExtraUtil.isNetworkConnected(getActivity())) {

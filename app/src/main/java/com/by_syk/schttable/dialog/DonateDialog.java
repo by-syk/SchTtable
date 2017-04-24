@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.by_syk.lib.storage.SP;
 import com.by_syk.lib.text.AboutMsgRender;
 import com.by_syk.schttable.R;
-import com.by_syk.schttable.util.ExtraUtil;
 
 /**
  * Created by By_syk on 2016-11-04.
@@ -30,11 +29,11 @@ public class DonateDialog extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                 .setMessage(message)
-                .setPositiveButton(R.string.dia_bt_ok, null);
+                .setPositiveButton(R.string.dlg_bt_ok, null);
 
         sp = new SP(getActivity(), false);
         if (!sp.getBoolean("donated")) {
-            builder.setNegativeButton(R.string.dia_bt_donated, new DialogInterface.OnClickListener() {
+            builder.setNegativeButton(R.string.dlg_bt_donated, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     sp.save("donated", true);

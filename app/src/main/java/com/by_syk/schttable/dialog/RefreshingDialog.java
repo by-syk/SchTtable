@@ -35,7 +35,7 @@ public class RefreshingDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog alertDialog = new AlertDialog.Builder(getActivity())
                 .setMessage(R.string.refreshing_desc)
-                .setPositiveButton(R.string.dia_bt_cancel, null)
+                .setPositiveButton(R.string.dlg_bt_cancel, null)
                 .create();
 
         alertDialog.setCanceledOnTouchOutside(false);

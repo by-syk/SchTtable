@@ -38,7 +38,6 @@ import com.by_syk.schttable.bean.StatusBean;
 import com.by_syk.schttable.bean.UserBean;
 import com.by_syk.schttable.dialog.AboutDialog;
 import com.by_syk.schttable.dialog.ApplyDialog;
-import com.by_syk.schttable.dialog.DonateDialog;
 import com.by_syk.schttable.dialog.NewAppDialog;
 import com.by_syk.schttable.dialog.StatusDialog;
 import com.by_syk.schttable.util.AccountInputFilter;
@@ -304,7 +303,7 @@ public class SignInActivity extends Activity {
             progressDialog.setMessage(getString(R.string.logining_desc));
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.setButton(ProgressDialog.BUTTON_POSITIVE,
-                    getString(R.string.dia_bt_cancel),
+                    getString(R.string.dlg_bt_cancel),
                     new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {

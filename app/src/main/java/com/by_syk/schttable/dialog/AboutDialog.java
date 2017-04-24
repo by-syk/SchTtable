@@ -16,7 +16,7 @@ public class AboutDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         return new AlertDialog.Builder(getActivity())
                 .setMessage(R.string.about_desc)
-                .setPositiveButton(R.string.dia_bt_ok, null)
+                .setPositiveButton(R.string.dlg_bt_ok, null)
                 .create();
     }
 }

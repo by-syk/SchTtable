@@ -42,7 +42,7 @@ public class ApplyDialog extends DialogFragment {
 
         return new AlertDialog.Builder(getActivity())
                 .setMessage(message)
-                .setPositiveButton(R.string.dia_bt_send_email, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.dlg_bt_send_email, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         ExtraUtil.sendEmail(getActivity(), getString(R.string.my_email),

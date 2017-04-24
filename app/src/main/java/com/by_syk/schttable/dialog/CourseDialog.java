@@ -38,10 +38,13 @@ public class CourseDialog extends DialogFragment {
                     .setText(getString(R.string.course_order_week, getOrderAbbr(courseBean.getWeekOrder())));
         }
 
+        int titleId = courseBean != null && courseBean.isMerge()
+                ? R.string.dlg_title_detail_conflict : R.string.dlg_title_detail;
+
         return new AlertDialog.Builder(getActivity())
-                .setTitle(R.string.dia_title_detail)
+                .setTitle(titleId)
                 .setView(viewGroup)
-                .setPositiveButton(R.string.dia_bt_got_it, null)
+                .setPositiveButton(R.string.dlg_bt_got_it, null)
                 .create();
     }
 

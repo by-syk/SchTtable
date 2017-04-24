@@ -30,19 +30,19 @@
     <string name="toast_no_network">:( No network connection.</string>
     <string name="toast_copied">Copied to clipboard: %s</string>
 
-    <string name="dia_title_detail">Detail</string>
-    <!--<string name="dia_title_about">About</string>-->
-    <string name="dia_title_about_me">About me</string>
-    <string name="dia_title_new_app">Latest app</string>
-    <string name="dia_bt_got_it">Got it</string>
-    <string name="dia_bt_cancel">Cancel</string>
-    <string name="dia_bt_sign_out">Sign out</string>
-    <string name="dia_bt_close">Close</string>
-    <string name="dia_bt_donated">Donated</string>
-    <string name="dia_bt_ok">OK</string>
-    <string name="dia_bt_download">Download</string>
-    <string name="dia_bt_refresh">Refresh now</string>
-    <string name="dia_bt_send_email">Send E-mail</string>
+    <string name="dlg_title_detail">Detail</string>
+    <string name="dlg_title_detail_conflict">Detail (CONFLICT)</string>
+    <string name="dlg_title_about_me">About me</string>
+    <string name="dlg_title_new_app">Latest app</string>
+    <string name="dlg_bt_got_it">Got it</string>
+    <string name="dlg_bt_cancel">Cancel</string>
+    <string name="dlg_bt_sign_out">Sign out</string>
+    <string name="dlg_bt_close">Close</string>
+    <string name="dlg_bt_donated">Donated</string>
+    <string name="dlg_bt_ok">OK</string>
+    <string name="dlg_bt_download">Download</string>
+    <string name="dlg_bt_refresh">Refresh now</string>
+    <string name="dlg_bt_send_email">Send E-mail</string>
 
     <string name="preference_category_debug">Debug</string>
     <string name="preference_title_host">Host</string>

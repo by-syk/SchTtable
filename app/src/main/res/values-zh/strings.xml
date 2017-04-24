@@ -28,19 +28,19 @@
     <string name="toast_no_network">无网络连接 :(</string>
     <string name="toast_copied">已复制到剪切板：%s</string>
 
-    <string name="dia_title_detail">详情</string>
-    <!--<string name="dia_title_about">关于</string>-->
-    <string name="dia_title_about_me">我的信息</string>
-    <string name="dia_title_new_app">新版本</string>
-    <string name="dia_bt_got_it">我知道了</string>
-    <string name="dia_bt_cancel">取消</string>
-    <string name="dia_bt_sign_out">注销</string>
-    <string name="dia_bt_close">关闭</string>
-    <string name="dia_bt_donated">我已捐赠</string>
-    <string name="dia_bt_ok">确定</string>
-    <string name="dia_bt_download">下载</string>
-    <string name="dia_bt_refresh">立即刷新</string>
-    <string name="dia_bt_send_email">发送邮件</string>
+    <string name="dlg_title_detail">详情</string>
+    <string name="dlg_title_detail_conflict">详情（重课）</string>
+    <string name="dlg_title_about_me">我的信息</string>
+    <string name="dlg_title_new_app">新版本</string>
+    <string name="dlg_bt_got_it">我知道了</string>
+    <string name="dlg_bt_cancel">取消</string>
+    <string name="dlg_bt_sign_out">注销</string>
+    <string name="dlg_bt_close">关闭</string>
+    <string name="dlg_bt_donated">我已捐赠</string>
+    <string name="dlg_bt_ok">确定</string>
+    <string name="dlg_bt_download">下载</string>
+    <string name="dlg_bt_refresh">立即刷新</string>
+    <string name="dlg_bt_send_email">发送邮件</string>
 
     <string name="preference_category_debug">调试</string>
     <string name="preference_title_host">Host</string>
