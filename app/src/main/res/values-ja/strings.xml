@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">ギーク時間割</string>
     <string name="toast_welcome">ようこそ</string>
     <string name="toast_cancel_login">キャンセルしました</string>
@@ -31,7 +30,6 @@
     <string name="menu_official_page">公式サイト</string>
     <string name="tag_app_desc">新機能</string>
     <string name="dlg_bt_cancel">キャンセル</string>
-    <!--<string name="dia_title_about">アプリ情報</string>-->
     <string name="dlg_title_about_me">個人情報</string>
     <string name="dlg_title_new_app">最新バージョン</string>
     <string name="days_left">あと %d 日</string>
@@ -62,7 +60,7 @@
     <string name="toast_time_to_class_over">授業終わるまで%d分</string>
     <string name="menu_about">アプリ情報</string>
     <string name="menu_new_app">アップデート</string>
-    <string name="activity_html">WEB版</string>
+    <string name="activity_html">ウェブ版</string>
     <string name="activity_sign_in">Geek\'s SchTtable へようこそ</string>
     <string name="course_order">%s 時限目</string>
     <string name="app_size_desc">サイズ：%s</string>
@@ -79,15 +77,32 @@
     <string name="about_desc">
 "ギーク時間割、ギークなあなたに！
 \nCopyright &#169; 2016-2017 By_syk. All rights reserved."</string>
-    <!--<string name="refresh_failed_desc">
-"サーバーに接続できませんでした :(
-\n問題について：
-- 学生番号/パスワードが正しくありません
-- サーバーにアクセスできません"</string>-->
     <string name="donate_desc">
 "ギーク時間割は個人開発者によって開発され、ずいぶん時間がかかりました。
 \nもしこのアプリが気に入りましたら、コーヒー1杯分の寄付で応援してください！
-\nAlipay：[By_syk@163.com](copy:By_syk@163.com)"</string>
-    <!--<string name="apply_school_desc">あなたの学校を追加したい場合、メールでご連絡してください。Eメール：[By_syk@163.com](copy:By_syk@163.com)</string>-->
-
+\nAlipay：[By_syk@163.com](コピー：By_syk@163.com)"</string>
+    <string name="activity_settings">設定</string>
+    <string name="dlg_bt_refresh">再読み込み</string>
+    <string name="section_afternoon">午後</string>
+    <string name="section_morning">午前</string>
+    <string name="section_evening">夜</string>
+    <string name="menu_settings">設定</string>
+    <string name="preference_category_debug">デバッグ</string>
+    <string name="preference_dialog_host">Host</string>
+    <string name="preference_title_host">Host</string>
+    <string name="status_no_login">未ログイン</string>
+    <string name="status_no_lessons">今日は授業がありません</string>
+    <string name="menu_apply">申し込み</string>
+    <string name="html_shortcut_long_label">ウェブ版</string>
+    <string name="html_shortcut_short_label">ウェブ版</string>
+    <string name="dlg_title_detail_conflict">詳細（重なる授業）</string>
+    <string name="dlg_bt_send_email">メールを送信</string>
+    <string name="email_subject_apply">ギーク時間割：申し込み</string>
+    <string name="service_desc">ウィジェットを更新する</string>
+    <string name="service">ウィジェットサービス</string>
+    <string name="status_error2">問題が発生しました :( エラーコード：%1$d %2$s</string>
+    <string name="downloading_desc">ダウンロード中&#8230;</string>
+    <string name="visit_official_page">[公式サイト&#8230;](%s)</string>
+    <string name="char_split">・</string>
+    <string name="refreshing_desc">読み込み中&#8230;1分かかりますので、しばらくお待ちください&#8230;</string>
 </resources>
