@@ -52,6 +52,10 @@
             android:name=".SettingsActivity"
             android:label="@string/activity_settings" />-->
 
+        <activity
+            android:name=".IntroActivity"
+            android:theme="@style/WelcomeScreenTheme" />
+
         <service
             android:name=".service.AppWidgetService"
             android:label="@string/service"

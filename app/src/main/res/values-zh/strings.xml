@@ -41,6 +41,7 @@
     <string name="dlg_bt_download">下载</string>
     <string name="dlg_bt_refresh">立即刷新</string>
     <string name="dlg_bt_send_email">发送邮件</string>
+    <string name="dlg_bt_welcome">欢迎</string>
 
     <string name="preference_category_debug">调试</string>
     <string name="preference_title_host">Host</string>
@@ -123,5 +124,13 @@
     <string name="section_morning">上午</string>
     <string name="section_afternoon">下午</string>
     <string name="section_evening">晚上</string>
+    <string name="intro_title_1">欢迎使用「极课」</string>
+    <string name="intro_desc_1">一款轻量的高校课表APP</string>
+    <string name="intro_title_2">删繁就简、专注如一</string>
+    <string name="intro_desc_2">「极课」专注于课表的展示，而无多余的周边功能</string>
+    <string name="intro_title_3">一览</string>
+    <string name="intro_desc_3">简洁的课视图</string>
+    <string name="intro_title_4">一览</string>
+    <string name="intro_desc_4">优雅的小部件</string>
 
 </resources>

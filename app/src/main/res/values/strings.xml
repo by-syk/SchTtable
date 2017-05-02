@@ -43,6 +43,7 @@
     <string name="dlg_bt_download">Download</string>
     <string name="dlg_bt_refresh">Refresh now</string>
     <string name="dlg_bt_send_email">Send E-mail</string>
+    <string name="dlg_bt_welcome">Welcome</string>
 
     <string name="preference_category_debug">Debug</string>
     <string name="preference_title_host">Host</string>
@@ -128,5 +129,13 @@ This may take one minute."</string>
     <string name="section_morning">Morning</string>
     <string name="section_afternoon">Afternoon</string>
     <string name="section_evening">Evening</string>
+    <string name="intro_title_1">Welcome to use SchTtable</string>
+    <string name="intro_desc_1">An university timetable app.</string>
+    <string name="intro_title_2">SIMPLE, BRIEF and CLEAR</string>
+    <string name="intro_desc_2">Try it&#8230;</string>
+    <string name="intro_title_3">Preview</string>
+    <string name="intro_desc_3">Brief course view</string>
+    <string name="intro_title_4">Preview</string>
+    <string name="intro_desc_4">Beautiful appwidget</string>
 
 </resources>

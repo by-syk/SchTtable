@@ -15,4 +15,9 @@
 
     <color name="color_divider">#80484848</color>
 
+    <color name="intro_1">#455a64</color>
+    <color name="intro_2">#546e7a</color>
+    <color name="intro_3">#607d8b</color>
+    <color name="intro_4">#78909c</color>
+
 </resources>

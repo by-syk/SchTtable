@@ -95,6 +95,24 @@ public class HelloActivity extends Activity {
                 .start();
     }
 
+    private void launch(Bundle data) {
+        Intent intent = new Intent(HelloActivity.this, SignInActivity.class);
+        intent.putExtra("data", data);
+        startActivity(intent);
+        finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
+
+    private void waitMoment() {
+        while (!isAnimEnd && isRunning) {
+            SystemClock.sleep(100);
+        }
+        long time = System.currentTimeMillis() - startTime;
+        if (time < 1000) {
+            SystemClock.sleep(1000 - time);
+        }
+    }
+
     private class LoadSchoolsTask extends AsyncTask<String, Integer, Bundle> {
         private boolean isNetworkOk = true;
 
@@ -157,21 +175,7 @@ public class HelloActivity extends Activity {
                 GlobalToast.showToast(HelloActivity.this, R.string.toast_error, true);
             }
 
-            Intent intent = new Intent(HelloActivity.this, SignInActivity.class);
-            intent.putExtra("data", result);
-            startActivity(intent);
-            finish();
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        }
-    }
-
-    private void waitMoment() {
-        while (!isAnimEnd && isRunning) {
-            SystemClock.sleep(100);
-        }
-        long time = System.currentTimeMillis() - startTime;
-        if (time < 1000) {
-            SystemClock.sleep(1000 - time);
+            launch(result);
         }
     }
 }

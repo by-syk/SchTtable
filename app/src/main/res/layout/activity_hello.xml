@@ -1,52 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horz_margin"
-    android:paddingRight="@dimen/activity_horz_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin">
+    android:fitsSystemWindows="true">
 
-    <ProgressBar
-        style="?android:attr/progressBarStyleSmall"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horz_margin"
+        android:paddingRight="@dimen/activity_horz_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/double_unit_padding">
-
-        <TextView
-            style="@style/HelloTextTap"
-            android:id="@+id/tv_title"
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            android:visibility="invisible"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingBottom="@dimen/double_unit_padding">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/HelloTextTap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0"
+                android:clickable="true"
+                android:padding="@dimen/double_unit_padding"
+                android:text="@string/app_name"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:alpha="0"
-            android:clickable="true"
-            android:padding="@dimen/double_unit_padding"
-            android:textColor="@android:color/secondary_text_dark"
-            android:text="@string/app_name" />
+            android:maxLines="1"
+            android:text="@string/copyright"
+            android:textColor="@android:color/tertiary_text_dark"
+            android:textSize="12sp"
+            android:visibility="invisible" />
 
-    </FrameLayout>
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/tv_copyright"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/copyright"
-        android:textSize="12sp"
-        android:maxLines="1"
-        android:visibility="invisible"
-        android:alpha="0"
-        android:textColor="@android:color/tertiary_text_dark"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true" />
-
-</RelativeLayout>
+</FrameLayout>

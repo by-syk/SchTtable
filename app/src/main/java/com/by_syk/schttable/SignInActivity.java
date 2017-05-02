@@ -45,6 +45,7 @@ import com.by_syk.schttable.util.C;
 import com.by_syk.schttable.util.RetrofitHelper;
 import com.by_syk.schttable.util.impl.ServerService;
 import com.by_syk.schttable.util.net.NetEncryptUtil;
+import com.stephentuso.welcome.WelcomeHelper;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -75,12 +76,16 @@ public class SignInActivity extends Activity {
 
     private AppVerBean appVerBean;
 
+    private WelcomeHelper welcomeScreen;
+
     private boolean isRunning = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+        welcome(savedInstanceState);
 
         init();
     }
@@ -97,6 +102,18 @@ public class SignInActivity extends Activity {
         super.onDestroy();
 
         isRunning = false;
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        welcomeScreen.onSaveInstanceState(outState);
+    }
+
+    private void welcome(Bundle savedInstanceState) {
+        welcomeScreen = new WelcomeHelper(this, IntroActivity.class);
+        welcomeScreen.show(savedInstanceState);
     }
 
     private void init() {
@@ -219,6 +236,12 @@ public class SignInActivity extends Activity {
         String linkText = getString(R.string.visit_official_page, schoolBean.getUrl());
         tvVisitOfficial.setText(AboutMsgRender.render(SignInActivity.this, linkText));
         tvVisitOfficial.setVisibility(View.VISIBLE);
+    }
+
+    private void launch() {
+        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void checkAppUpdate() {
@@ -389,9 +412,7 @@ public class SignInActivity extends Activity {
 
             GlobalToast.showToast(SignInActivity.this, R.string.toast_welcome);
 
-            Intent intent = new Intent(SignInActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
+            launch();
         }
 
         @NonNull
