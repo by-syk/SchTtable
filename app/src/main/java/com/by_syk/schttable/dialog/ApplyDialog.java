@@ -30,14 +30,11 @@ import retrofit2.Response;
  */
 
 public class ApplyDialog extends DialogFragment {
-    private int numSupported = 0;
-
     private boolean isExecuted = false;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        numSupported = getArguments().getInt("numSupported");
-        String text = getString(R.string.apply_school_desc, numSupported, 0, "...");
+        String text = getString(R.string.apply_school_desc, "N", "...");
         SpannableString message = AboutMsgRender.render(getActivity(), text);
 
         return new AlertDialog.Builder(getActivity())
@@ -81,6 +78,9 @@ public class ApplyDialog extends DialogFragment {
                 if (resResBean == null || !resResBean.isStatusSuccess()) {
                     return;
                 }
+                if (!isAdded()) {
+                    return;
+                }
                 fillApplicationData(resResBean.getResult());
             }
 
@@ -90,7 +90,7 @@ public class ApplyDialog extends DialogFragment {
     }
 
     private void fillApplicationData(List<SchoolTodoBean> beanList) {
-        if (beanList == null || beanList.isEmpty() || !isAdded()) {
+        if (beanList == null || beanList.isEmpty()) {
             return;
         }
 
@@ -102,7 +102,8 @@ public class ApplyDialog extends DialogFragment {
         if (sbSchools.length() > 0) {
             sbSchools.setLength(sbSchools.length() - split.length());
         }
-        String text = getString(R.string.apply_school_desc, numSupported, beanList.size(), sbSchools);
+        String text = getString(R.string.apply_school_desc,
+                String.valueOf(beanList.size()), sbSchools);
         SpannableString message = AboutMsgRender.render(getActivity(), text);
         for (SchoolTodoBean bean : beanList) {
             if (bean.isDeprecated() && !bean.getName().isEmpty()) {
@@ -112,15 +113,5 @@ public class ApplyDialog extends DialogFragment {
             }
         }
         ((AlertDialog) getDialog()).setMessage(message);
-    }
-
-    public static ApplyDialog newInstance(int numSupported) {
-        ApplyDialog dialog = new ApplyDialog();
-
-        Bundle bundle = new Bundle();
-        bundle.putInt("numSupported", numSupported);
-        dialog.setArguments(bundle);
-
-        return dialog;
     }
 }

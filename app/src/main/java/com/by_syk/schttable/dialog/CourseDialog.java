@@ -3,13 +3,16 @@ package com.by_syk.schttable.dialog;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.by_syk.lib.toast.GlobalToast;
 import com.by_syk.schttable.R;
 import com.by_syk.schttable.bean.CourseBean;
 import com.by_syk.schttable.util.DateUtil;
+import com.by_syk.schttable.util.ExtraUtil;
 
 /**
  * Created by By_syk on 2016-11-16.
@@ -45,6 +48,17 @@ public class CourseDialog extends DialogFragment {
                 .setTitle(titleId)
                 .setView(viewGroup)
                 .setPositiveButton(R.string.dlg_bt_got_it, null)
+                .setNegativeButton(R.string.dlg_bt_bug, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (!ExtraUtil.isNetworkConnected(getActivity())) {
+                            GlobalToast.showToast(getActivity(), R.string.toast_no_network);
+                            return;
+                        }
+                        SubmitBugDialog.newInstance(courseBean)
+                                .show(getFragmentManager(), "submitBugDialog");
+                    }
+                })
                 .create();
     }
 
@@ -67,5 +81,15 @@ public class CourseDialog extends DialogFragment {
         }
 
         return getString(R.string.course_order, getOrderAbbr(courseBean.getCourseOrder()));
+    }
+
+    public static CourseDialog newInstance(CourseBean bean) {
+        CourseDialog dialog = new CourseDialog();
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("bean", bean);
+        dialog.setArguments(bundle);
+
+        return dialog;
     }
 }

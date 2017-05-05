@@ -125,7 +125,7 @@ public class HelloActivity extends Activity {
             }
 
             ServerService service = RetrofitHelper.getInstance().getService(ServerService.class);
-            Call<ResResBean<ArrayList<SchoolBean>>> call = service.getSupportedSchools();
+            Call<ResResBean<ArrayList<SchoolBean>>> call = service.getSupportedSchools(false);
             try {
                 ResResBean<ArrayList<SchoolBean>> resResBean = call.execute().body();
                 if (resResBean == null || !resResBean.isStatusSuccess()) {

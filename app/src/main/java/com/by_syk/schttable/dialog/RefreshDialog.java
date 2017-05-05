@@ -22,16 +22,21 @@ public class RefreshDialog extends DialogFragment {
                 .setPositiveButton(R.string.dlg_bt_refresh, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if (!ExtraUtil.isNetworkConnected(getActivity())) {
-                            GlobalToast.showToast(getActivity(), R.string.toast_no_network);
-                            return;
-                        }
-
                         RefreshingDialog refreshingDialog = new RefreshingDialog();
                         refreshingDialog.setArguments(getArguments());
-                        refreshingDialog.show(getActivity().getFragmentManager(), "refreshingDialog");
+                        refreshingDialog.show(getFragmentManager(), "refreshingDialog");
                     }
                 })
                 .create();
+    }
+
+    public static RefreshDialog newInstance(String userKey) {
+        RefreshDialog dialog = new RefreshDialog();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("userKey", userKey);
+        dialog.setArguments(bundle);
+
+        return dialog;
     }
 }

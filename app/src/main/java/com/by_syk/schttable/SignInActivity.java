@@ -36,7 +36,6 @@ import com.by_syk.schttable.bean.ResResBean;
 import com.by_syk.schttable.bean.SchoolBean;
 import com.by_syk.schttable.bean.StatusBean;
 import com.by_syk.schttable.bean.UserBean;
-import com.by_syk.schttable.dialog.AboutDialog;
 import com.by_syk.schttable.dialog.ApplyDialog;
 import com.by_syk.schttable.dialog.NewAppDialog;
 import com.by_syk.schttable.dialog.StatusDialog;
@@ -282,7 +281,7 @@ public class SignInActivity extends Activity {
         getMenuInflater().inflate(R.menu.menu_sign_in, menu);
 
         if (appVerBean != null && appVerBean.isNew(this)) {
-            menu.getItem(0).setVisible(true);
+            menu.getItem(R.id.menu_new_app).setVisible(true);
         }
 
         return true;
@@ -296,13 +295,14 @@ public class SignInActivity extends Activity {
                         .show(getFragmentManager(), "newAppDialog");
                 return true;
             case R.id.menu_apply:
-                ApplyDialog.newInstance(schoolBeanList.size())
-                        .show(getFragmentManager(), "applyDialog");
+                (new ApplyDialog()).show(getFragmentManager(), "applyDialog");
                 return true;
-            case R.id.menu_about:
-                AboutDialog aboutDialog = new AboutDialog();
-                aboutDialog.show(getFragmentManager(), "aboutDialog");
-                return true;
+            case R.id.menu_more:
+//                AboutDialog aboutDialog = new AboutDialog();
+//                aboutDialog.show(getFragmentManager(), "aboutDialog");
+//                return true;
+                item.setIntent(new Intent(this, AboutActivity.class));
+                return super.onOptionsItemSelected(item);
         }
         return super.onOptionsItemSelected(item);
     }

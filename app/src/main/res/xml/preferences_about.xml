@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/preference_cate_app">
+
+        <Preference
+            android:summary="@string/preference_summary_app"
+            android:title="@string/preference_title_app" />
+
+        <Preference
+            android:key="welcome"
+            android:title="@string/preference_title_welcome" />
+
+        <Preference
+            android:key="schools"
+            android:title="@string/preference_title_schools" />
+
+        <Preference
+            android:key="apply"
+            android:title="@string/preference_title_apply" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preference_cate_developer">
+
+        <Preference
+            android:summary="@string/preference_summary_developer"
+            android:title="@string/preference_title_developer" />
+
+        <Preference
+            android:key="contact"
+            android:summary="@string/preference_summary_contact"
+            android:title="@string/preference_title_contact" />
+
+        <Preference
+            android:key="donate"
+            android:summary="@string/preference_summary_donate"
+            android:title="@string/preference_title_donate" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preference_cate_copyright">
+
+        <Preference
+            android:key="privacy"
+            android:title="@string/preference_title_privacy" />
+
+        <Preference
+            android:summary="@string/preference_summary_copyright"
+            android:title="@string/preference_title_copyright" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preference_cate_debug">
+
+        <Preference
+            android:key="server"
+            android:title="@string/preference_title_server"
+            android:summary="@string/preference_summary_server" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

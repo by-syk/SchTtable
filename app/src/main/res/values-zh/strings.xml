@@ -5,13 +5,13 @@
 
     <string name="activity_sign_in">欢迎使用极课</string>
     <string name="activity_html">网页课表</string>
-    <string name="activity_settings">设置</string>
+    <string name="activity_about">关于</string>
 
     <string name="menu_new_app">获取新版本</string>
     <string name="menu_apply">申请支持</string>
     <string name="menu_settings">设置</string>
     <string name="menu_donate">捐赠</string>
-    <string name="menu_about">关于</string>
+    <string name="menu_more">更多</string>
     <string name="menu_timetable_html">网页课表</string>
     <string name="menu_refresh">刷新</string>
     <string name="menu_about_me">我的信息</string>
@@ -27,25 +27,49 @@
     <string name="toast_cancel_login">已取消登录</string>
     <string name="toast_no_network">无网络连接 :(</string>
     <string name="toast_copied">已复制到剪切板：%s</string>
+    <string name="toast_bug_reporting">正在上报&#8230;</string>
+    <string name="toast_bug_report_failed">报错失败</string>
 
     <string name="dlg_title_detail">详情</string>
     <string name="dlg_title_detail_conflict">详情（重课）</string>
     <string name="dlg_title_about_me">我的信息</string>
     <string name="dlg_title_new_app">新版本</string>
+    <string name="dlg_title_privacy">隐私声明</string>
+    <string name="dlg_title_schools">已支持高校</string>
     <string name="dlg_bt_got_it">我知道了</string>
     <string name="dlg_bt_cancel">取消</string>
     <string name="dlg_bt_sign_out">注销</string>
     <string name="dlg_bt_close">关闭</string>
     <string name="dlg_bt_donated">我已捐赠</string>
     <string name="dlg_bt_ok">确定</string>
-    <string name="dlg_bt_download">下载</string>
+    <string name="dlg_bt_download">前往下载</string>
     <string name="dlg_bt_refresh">立即刷新</string>
     <string name="dlg_bt_send_email">发送邮件</string>
     <string name="dlg_bt_welcome">欢迎</string>
+    <string name="dlg_bt_privacy">隐私声明</string>
+    <string name="dlg_bt_bug">报错</string>
+    <string name="dlg_bt_report">上报</string>
 
-    <string name="preference_category_debug">调试</string>
-    <string name="preference_title_host">Host</string>
-    <string name="preference_dialog_host">Host</string>
+    <string name="preference_cate_app">APP</string>
+    <string name="preference_title_app">极课</string>
+    <string name="preference_summary_app">一款轻量的高校课表APP，删繁就简、专注如一</string>
+    <string name="preference_title_welcome">欢迎</string>
+    <string name="preference_title_schools">已支持高校</string>
+    <string name="preference_title_apply">申请支持</string>
+    <string name="preference_cate_developer">开发者</string>
+    <string name="preference_title_developer">独立开发者</string>
+    <string name="preference_summary_developer">"@By_syk"</string>
+    <string name="preference_title_contact">联系开发者</string>
+    <string name="preference_summary_contact">我的邮箱：[By_syk@163.com](email:By_syk@163.com)</string>
+    <string name="preference_title_donate">通过支付宝捐赠</string>
+    <string name="preference_summary_donate">[「极课」是个人开发与维护的一款课表APP，完全免费，没有任何收入。如果你的学校已被支持，并且觉得不错，可以考虑赞助我。所有捐赠将用于维护服务器运作以及提高我适配更多学校的积极性。](alipay:https://qr.alipay.com/aex05154fiiurupx5ai0dd1|By_syk@163.com)</string>
+    <string name="preference_cate_copyright">版权相关</string>
+    <string name="preference_title_privacy">隐私声明</string>
+    <string name="preference_title_copyright">版权所有</string>
+    <string name="preference_summary_copyright">Copyright &#169; 2016-2017 By_syk. All rights reserved.</string>
+    <string name="preference_cate_debug">调试</string>
+    <string name="preference_title_server">服务器状态</string>
+    <string name="preference_summary_server">@string/server_status_checking</string>
 
     <string name="school_name">学校</string>
     <string name="stu_no">学号</string>
@@ -103,7 +127,7 @@
 这可能会花费一分钟，请耐心等待&#8230;"</string>
     <string name="sign_out_desc">是否注销？</string>
     <string name="donate_desc">
-"极课是个人开发与维护的一款自动抓课课表软件，完全免费，没有任何收入。
+"「极课」是个人开发与维护的一款课表APP，完全免费，没有任何收入。
 \n如果你的学校已被支持，并且觉得不错，可以考虑赞助我。所有捐赠将用于维护服务器运作以及提高我适配更多学校的积极性。
 \n支付宝：[By_syk@163.com](alipay:https://qr.alipay.com/aex05154fiiurupx5ai0dd1|By_syk@163.com)"</string>
     <string name="tag_app_version">版本</string>
@@ -115,7 +139,7 @@
     <string name="service">小部件刷新服务</string>
     <string name="service_desc">定时刷新当天课程小部件数据</string>
     <string name="apply_school_desc">
-"除已支持的%1$d所学校，另有%2$d所学校在申请之列：%3$s。
+"除已支持的高校，另有%1$s所学校在申请之列：%2$s。
 \n如果您喜欢这款App并且愿意使用，但学校不在支持之列，也不在申请之列，不妨联系我并协助以支持。我的邮箱：[By_syk@163.com](copy:By_syk@163.com)
 \n写在最后：此为个人兴趣之作，也因个人开发与维护，时间精力能力有限，所以支持的学校不多，望体谅。"</string>
     <string name="char_split">、</string>
@@ -132,5 +156,11 @@
     <string name="intro_desc_3">简洁的课视图</string>
     <string name="intro_title_4">一览</string>
     <string name="intro_desc_4">优雅的小部件</string>
+    <string name="bug_desc">请简单描述错误之处，帮助我们排查问题。</string>
+    <string name="school_and_user_num">%1$s (用户数:%2$d)</string>
+    <string name="server_status_ok">正常运行 %s</string>
+    <string name="server_status_down">宕机</string>
+    <string name="server_status_checking">正在检查&#8230;</string>
+    <string name="server_status_check_failed">检查失败</string>
 
 </resources>

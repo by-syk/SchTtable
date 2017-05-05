@@ -97,6 +97,39 @@ public class ExtraUtil {
         return null;
     }
 
+    public static String readFile(InputStream inputStream) {
+        if (inputStream == null) {
+            return null;
+        }
+
+        StringBuilder sbData = new StringBuilder();
+        BufferedReader bufferedReader = null;
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"));
+            String buffer;
+            while ((buffer = bufferedReader.readLine()) != null) {
+                sbData.append(buffer).append("\n");
+            }
+            if (sbData.length() > 0) {
+                sbData.setLength(sbData.length() - 1);
+            }
+
+            return sbData.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return null;
+    }
+
     public static boolean unzip(File zipFile, File targetDir) {
         if (zipFile == null || !zipFile.exists() || targetDir == null) {
             return false;

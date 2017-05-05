@@ -9,6 +9,13 @@
         android:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/menu_donate"
+        android:title="@string/menu_donate"
+        android:icon="@drawable/ic_action_coin"
+        android:visible="false"
+        android:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/menu_html"
         android:title="@string/menu_timetable_html"
         android:icon="@drawable/ic_action_webpage"
@@ -25,14 +32,8 @@
         android:showAsAction="never" />
 
     <item
-        android:id="@+id/menu_donate"
-        android:title="@string/menu_donate"
-        android:visible="false"
-        android:showAsAction="never" />
-
-    <item
-        android:id="@+id/menu_about"
-        android:title="@string/menu_about"
+        android:id="@+id/menu_more"
+        android:title="@string/menu_more"
         android:showAsAction="never" />
 
     <item

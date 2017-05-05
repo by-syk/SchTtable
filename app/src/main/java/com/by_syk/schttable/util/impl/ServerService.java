@@ -8,6 +8,7 @@ import com.by_syk.schttable.bean.SchoolTodoBean;
 import com.by_syk.schttable.bean.StatusBean;
 import com.by_syk.schttable.bean.TermBean;
 import com.by_syk.schttable.bean.UserBean;
+import com.by_syk.schttable.bean.WatchDogBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,10 +55,11 @@ public interface ServerService {
     @FormUrlEncoded
     Call<ResResBean<TermBean>> getTermInfo(@Field("userkey") String userKey);
 
-    @GET("common/schools.do")
-    Call<ResResBean<ArrayList<SchoolBean>>> getSupportedSchools();
+    @POST("common/schools.do")
+    @FormUrlEncoded
+    Call<ResResBean<ArrayList<SchoolBean>>> getSupportedSchools(@Field("userNum") boolean withUserNum);
 
-    @GET("common/schoolstodo.do")
+    @POST("common/schoolstodo.do")
     Call<ResResBean<List<SchoolTodoBean>>> getTodoSchools();
 
     @POST("common/status.do")
@@ -72,4 +74,15 @@ public interface ServerService {
                                                   @Field("devicesdk") int de55viceSdk,
                                                   @Field("appvername") String appVerName,
                                                   @Field("appvercode") int appVerCode);
+
+    @POST("misc/bugrep.do")
+    @FormUrlEncoded
+    Call<ResResBean> reportBug(@Field("schoolCode") String schoolCode,
+                               @Field("stuNo") String stuNo,
+                               @Field("courseDate") long courseDate,
+                               @Field("courseOrder") int courseOrder,
+                               @Field("desc") String desc);
+
+    @GET("misc/watchdog.do")
+    Call<ResResBean<WatchDogBean>> watchDog();
 }

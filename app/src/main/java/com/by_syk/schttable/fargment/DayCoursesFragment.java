@@ -3,6 +3,7 @@ package com.by_syk.schttable.fargment;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -90,8 +91,7 @@ public class DayCoursesFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (!isTaskRunning) {
-                    Log.d(C.LOG_TAG, "Tap to reload");
-                    (new LoadTimetableTask()).execute();
+                    (new LoadTimetableTask()).execute(200);
                 }
             }
         });
@@ -105,11 +105,8 @@ public class DayCoursesFragment extends Fragment {
         adapter.setOnItemClickListener(new CourseAdapter.OnItemClickListener() {
             @Override
             public void onClick(int pos, CourseBean bean) {
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("bean", adapter.getItem(pos));
-                CourseDialog courseDialog = new CourseDialog();
-                courseDialog.setArguments(bundle);
-                courseDialog.show(getActivity().getFragmentManager(), "courseDialog");
+                CourseDialog.newInstance(adapter.getItem(pos))
+                        .show(getActivity().getFragmentManager(), "courseDialog");
             }
         });
         recyclerView.setAdapter(adapter);
@@ -130,7 +127,7 @@ public class DayCoursesFragment extends Fragment {
         return dayCoursesFragment;
     }
 
-    private class LoadTimetableTask extends AsyncTask<String, Integer, List<CourseBean>> {
+    private class LoadTimetableTask extends AsyncTask<Integer, Integer, List<CourseBean>> {
         private boolean isNetworkOk;
 
         @Override
@@ -143,7 +140,11 @@ public class DayCoursesFragment extends Fragment {
         }
 
         @Override
-        protected List<CourseBean> doInBackground(String... strings) {
+        protected List<CourseBean> doInBackground(Integer... params) {
+            if (params.length > 0 && params[0] != null) {
+                SystemClock.sleep(params[0]);
+            }
+
             isNetworkOk = ExtraUtil.isNetworkConnected(getActivity());
 
             String userKey = sp.getString("userKey");

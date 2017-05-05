@@ -48,9 +48,9 @@
             </intent-filter>
         </activity>
 
-        <!--<activity
-            android:name=".SettingsActivity"
-            android:label="@string/activity_settings" />-->
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/activity_about" />
 
         <activity
             android:name=".IntroActivity"

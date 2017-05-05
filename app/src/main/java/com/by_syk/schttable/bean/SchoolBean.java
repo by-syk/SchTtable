@@ -32,6 +32,10 @@ public class SchoolBean implements Parcelable {
     @SerializedName("url")
     private String url;
 
+    // 用户数
+    @SerializedName("userNum")
+    private int userNum;
+
     public String getCode() {
         return code;
     }
@@ -52,12 +56,17 @@ public class SchoolBean implements Parcelable {
         return url;
     }
 
+    public int getUserNum() {
+        return userNum;
+    }
+
     protected SchoolBean(Parcel in) {
         code = in.readString();
         name = in.readString();
         stuNoLen = in.readInt();
         stuNoRegex = in.readString();
         url = in.readString();
+        userNum = in.readInt();
     }
 
     public static final Creator<SchoolBean> CREATOR = new Creator<SchoolBean>() {
@@ -84,5 +93,6 @@ public class SchoolBean implements Parcelable {
         parcel.writeInt(stuNoLen);
         parcel.writeString(stuNoRegex);
         parcel.writeString(url);
+        parcel.writeInt(userNum);
     }
 }

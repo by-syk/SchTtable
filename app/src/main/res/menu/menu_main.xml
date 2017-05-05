@@ -25,14 +25,8 @@
         android:showAsAction="never" />
 
     <item
-        android:id="@+id/menu_donate"
-        android:title="@string/menu_donate"
-        android:visible="false"
-        android:showAsAction="never" />
-
-    <item
-        android:id="@+id/menu_about"
-        android:title="@string/menu_about"
+        android:id="@+id/menu_more"
+        android:title="@string/menu_more"
         android:showAsAction="never" />
 
     <item

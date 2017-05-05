@@ -6,15 +6,18 @@ import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.by_syk.lib.toast.GlobalToast;
 import com.by_syk.schttable.MainActivity;
 import com.by_syk.schttable.R;
 import com.by_syk.schttable.bean.ResResBean;
 import com.by_syk.schttable.bean.StatusBean;
 import com.by_syk.schttable.util.CourseSQLiteHelper;
+import com.by_syk.schttable.util.ExtraUtil;
 import com.by_syk.schttable.util.RetrofitHelper;
 import com.by_syk.schttable.util.impl.ServerService;
 
@@ -49,6 +52,17 @@ public class RefreshingDialog extends DialogFragment {
 
         if (!isExecuted) {
             isExecuted = true;
+
+            if (!ExtraUtil.isNetworkConnected(getActivity())) {
+                GlobalToast.showToast(getActivity(), R.string.toast_no_network);
+                (new Handler()).postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        dismiss();
+                    }
+                }, 400);
+                return;
+            }
 
             Window window = getDialog().getWindow();
             if (window != null) {
@@ -127,11 +141,7 @@ public class RefreshingDialog extends DialogFragment {
                 getActivity().finish();
             } else {
                 dismiss();
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("bean", statusBean);
-                StatusDialog statusDialog = new StatusDialog();
-                statusDialog.setArguments(bundle);
-                statusDialog.show(getFragmentManager(), "statusDialog");
+                StatusDialog.newInstance(statusBean).show(getFragmentManager(), "statusDialog");
             }
         }
     }

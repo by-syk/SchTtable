@@ -17,7 +17,6 @@ import com.by_syk.lib.storage.SP;
 import com.by_syk.schttable.bean.AppVerBean;
 import com.by_syk.schttable.bean.FullUserBean;
 import com.by_syk.schttable.bean.ResResBean;
-import com.by_syk.schttable.dialog.AboutDialog;
 import com.by_syk.schttable.dialog.AboutMeDialog;
 import com.by_syk.schttable.dialog.DonateDialog;
 import com.by_syk.schttable.dialog.NewAppDialog;
@@ -124,11 +123,11 @@ public class MainActivity extends FragmentActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
         if (appVerBean != null && appVerBean.isNew(MainActivity.this)) {
-            menu.getItem(0).setVisible(true);
+            menu.findItem(R.id.menu_new_app).setVisible(true);
         }
 
-        if (!sp.getBoolean("donated")) {
-            menu.getItem(4).setVisible(true);
+        if (C.SDK >= 21 && !sp.getBoolean("donated")) {
+            menu.findItem(R.id.menu_donate).setVisible(true);
         }
 
         return true;
@@ -137,20 +136,17 @@ public class MainActivity extends FragmentActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.menu_donate:
+                (new DonateDialog()).show(getFragmentManager(), "donateDialog");
+                return true;
             case R.id.menu_new_app: {
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("bean", appVerBean);
-                NewAppDialog newAppDialog = new NewAppDialog();
-                newAppDialog.setArguments(bundle);
-                newAppDialog.show(getFragmentManager(), "newAppDialog");
+                NewAppDialog.newInstance(appVerBean)
+                        .show(getFragmentManager(), "newAppDialog");
                 return true;
             }
             case R.id.menu_refresh: {
-                Bundle bundle = new Bundle();
-                bundle.putString("userKey", sp.getString("userKey"));
-                RefreshDialog refreshDialog = new RefreshDialog();
-                refreshDialog.setArguments(bundle);
-                refreshDialog.show(getFragmentManager(), "refreshDialog");
+                RefreshDialog.newInstance(sp.getString("userKey"))
+                        .show(getFragmentManager(), "refreshDialog");
                 return true;
             }
             case R.id.menu_html: {
@@ -161,17 +157,11 @@ public class MainActivity extends FragmentActivity {
             case R.id.menu_about_me:
                 aboutMe();
                 return true;
-            case R.id.menu_donate:
-                DonateDialog donateDialog = new DonateDialog();
-                donateDialog.show(getFragmentManager(), "donateDialog");
-                return true;
-            case R.id.menu_about:
-                AboutDialog aboutDialog = new AboutDialog();
-                aboutDialog.show(getFragmentManager(), "aboutDialog");
-                return true;
+            case R.id.menu_more:
+                item.setIntent(new Intent(this, AboutActivity.class));
+                return super.onOptionsItemSelected(item);
             case R.id.menu_sign_out:
-                SignOutDialog signOutDialog = new SignOutDialog();
-                signOutDialog.show(getFragmentManager(), "signOutDialog");
+                (new SignOutDialog()).show(getFragmentManager(), "signOutDialog");
                 return true;
         }
         return super.onOptionsItemSelected(item);
