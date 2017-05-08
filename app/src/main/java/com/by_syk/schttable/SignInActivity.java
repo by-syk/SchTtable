@@ -281,7 +281,7 @@ public class SignInActivity extends Activity {
         getMenuInflater().inflate(R.menu.menu_sign_in, menu);
 
         if (appVerBean != null && appVerBean.isNew(this)) {
-            menu.getItem(R.id.menu_new_app).setVisible(true);
+            menu.findItem(R.id.menu_new_app).setVisible(true);
         }
 
         return true;

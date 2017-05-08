@@ -19,6 +19,7 @@
     <string name="menu_about_me">About me</string>
     <string name="menu_sign_out">Sign out</string>
     <string name="menu_official_page">Official page</string>
+    <string name="menu_share">Share</string>
 
     <string name="toast_refreshing">Refreshing&#8230;</string>
     <string name="toast_time_to_class_on">Class begins in %d minutes.</string>
@@ -43,6 +44,7 @@
     <string name="dlg_bt_sign_out">Sign out</string>
     <string name="dlg_bt_close">Close</string>
     <string name="dlg_bt_donated">Donated</string>
+    <string name="dlg_bt_to_donate">To donate</string>
     <string name="dlg_bt_ok">OK</string>
     <string name="dlg_bt_download">Download</string>
     <string name="dlg_bt_refresh">Refresh now</string>
@@ -61,10 +63,10 @@
     <string name="preference_cate_developer">Developer</string>
     <string name="preference_title_developer">Independent developer</string>
     <string name="preference_summary_developer">"@By_syk"</string>
-    <string name="preference_title_contact">Contact developer</string>
+    <string name="preference_title_contact">Contact me</string>
     <string name="preference_summary_contact">My E-mail: [By_syk@163.com](email:By_syk@163.com)</string>
     <string name="preference_title_donate">Donate via Alipay</string>
-    <string name="preference_summary_donate">[SchTtable is developed by an independent developer and takes much spare time. If your school is supported and you like it, how about paying me a cup of coffee?](alipay:https://qr.alipay.com/aex05154fiiurupx5ai0dd1|By_syk@163.com)</string>
+    <string name="preference_summary_donate">SchTtable is developed by an independent developer and takes much spare time. If your school is supported and you like it, how about paying me a cup of coffee?</string>
     <string name="preference_cate_copyright">Copyright</string>
     <string name="preference_title_privacy">Privacy statement</string>
     <string name="preference_title_copyright">Copyright</string>
@@ -131,7 +133,7 @@ This may take one minute."</string>
         <string name="donate_desc">
 "SchTtable is developed by an independent developer and takes much spare time.
 \nIf your school is supported and you like it, how about paying me a cup of coffee?
-\nAlipay: [By_syk@163.com](alipay:https://qr.alipay.com/aex05154fiiurupx5ai0dd1|By_syk@163.com)"</string>
+\nAlipay: [By_syk@163.com](copy:By_syk@163.com)"</string>
     <string name="tag_app_version">Version</string>
     <string name="tag_app_desc">Points</string>
     <string name="tag_app_date">Date</string>
@@ -167,5 +169,10 @@ This may take one minute."</string>
     <string name="server_status_down">Down</string>
     <string name="server_status_checking">Checking&#8230;</string>
     <string name="server_status_check_failed">Failed to check</string>
+    <string name="donate_code_alipay" translatable="false">[By_syk@163.com](alipay:https://qr.alipay.com/aex05154fiiurupx5ai0dd1|By_syk@163.com)</string>
+    <string name="title_share">Share to schoolmate&#8230;</string>
+    <string name="share_content">
+"SchTtable, an university timetable app. It\'s SIMPLE, BRIEF and CLEAR.
+Have a try: http://www.coolapk.com/apk/com.by_syk.schttable"</string>
 
 </resources>

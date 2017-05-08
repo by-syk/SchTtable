@@ -32,8 +32,10 @@
             android:summary="@string/preference_summary_contact"
             android:title="@string/preference_title_contact" />
 
-        <Preference
+        <ListPreference
             android:key="donate"
+            android:entries="@array/donate_how_much"
+            android:entryValues="@array/donate_how_much_value"
             android:summary="@string/preference_summary_donate"
             android:title="@string/preference_title_donate" />
 

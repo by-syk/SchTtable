@@ -33,4 +33,5 @@
         android:id="@+id/menu_sign_out"
         android:title="@string/menu_sign_out"
         android:showAsAction="never" />
+
 </menu>

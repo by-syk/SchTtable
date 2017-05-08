@@ -35,4 +35,22 @@
         <item>%dth</item>
     </string-array>
 
+    <string-array name="donate_how_much">
+        <item>￥1</item>
+        <item>￥2</item>
+        <item>￥3</item>
+        <item>￥5</item>
+        <item>￥10</item>
+        <item>￥More</item>
+    </string-array>
+
+    <string-array name="donate_how_much_value" translatable="false">
+        <item>[1](alipay:FKX08285GBDG8RWPG0HJ73)</item>
+        <item>[2](alipay:FKX08344LPJCDBZYXQKIC4)</item>
+        <item>[3](alipay:FKX04052YCFWVLO72RR909)</item>
+        <item>[5](alipay:FKX02364SVQ4X3VB7WFGC9)</item>
+        <item>[10](alipay:FKX03500FJE3FM9Z6BY2A1)</item>
+        <item>[0](alipay:FKX05481RPRASYT5LSHSFB)</item>
+    </string-array>
+
 </resources>

@@ -17,6 +17,7 @@
     <string name="menu_about_me">我的信息</string>
     <string name="menu_sign_out">注销</string>
     <string name="menu_official_page">访问官网</string>
+    <string name="menu_share">分享</string>
 
     <string name="toast_refreshing">正在刷新&#8230;</string>
     <string name="toast_time_to_class_on">还有%d分钟上课</string>
@@ -41,6 +42,7 @@
     <string name="dlg_bt_sign_out">注销</string>
     <string name="dlg_bt_close">关闭</string>
     <string name="dlg_bt_donated">我已捐赠</string>
+    <string name="dlg_bt_to_donate">去捐赠</string>
     <string name="dlg_bt_ok">确定</string>
     <string name="dlg_bt_download">前往下载</string>
     <string name="dlg_bt_refresh">立即刷新</string>
@@ -59,10 +61,10 @@
     <string name="preference_cate_developer">开发者</string>
     <string name="preference_title_developer">独立开发者</string>
     <string name="preference_summary_developer">"@By_syk"</string>
-    <string name="preference_title_contact">联系开发者</string>
+    <string name="preference_title_contact">联系我</string>
     <string name="preference_summary_contact">我的邮箱：[By_syk@163.com](email:By_syk@163.com)</string>
     <string name="preference_title_donate">通过支付宝捐赠</string>
-    <string name="preference_summary_donate">[「极课」是个人开发与维护的一款课表APP，完全免费，没有任何收入。如果你的学校已被支持，并且觉得不错，可以考虑赞助我。所有捐赠将用于维护服务器运作以及提高我适配更多学校的积极性。](alipay:https://qr.alipay.com/aex05154fiiurupx5ai0dd1|By_syk@163.com)</string>
+    <string name="preference_summary_donate">「极课」是个人开发与维护的一款课表APP，完全免费，没有任何收入。如果你的学校已被支持，并且觉得不错，可以考虑赞助我。所有捐赠将用于维护服务器运作以及提高我适配更多学校的积极性。</string>
     <string name="preference_cate_copyright">版权相关</string>
     <string name="preference_title_privacy">隐私声明</string>
     <string name="preference_title_copyright">版权所有</string>
@@ -129,7 +131,7 @@
     <string name="donate_desc">
 "「极课」是个人开发与维护的一款课表APP，完全免费，没有任何收入。
 \n如果你的学校已被支持，并且觉得不错，可以考虑赞助我。所有捐赠将用于维护服务器运作以及提高我适配更多学校的积极性。
-\n支付宝：[By_syk@163.com](alipay:https://qr.alipay.com/aex05154fiiurupx5ai0dd1|By_syk@163.com)"</string>
+\n支付宝：[By_syk@163.com](copy:By_syk@163.com)"</string>
     <string name="tag_app_version">版本</string>
     <string name="tag_app_desc">描述</string>
     <string name="tag_app_date">发布于</string>
@@ -162,5 +164,9 @@
     <string name="server_status_down">宕机</string>
     <string name="server_status_checking">正在检查&#8230;</string>
     <string name="server_status_check_failed">检查失败</string>
+    <string name="title_share">分享给同学&#8230;</string>
+    <string name="share_content">
+"「极课」——一款轻量的高校课表APP，删繁就简、专注如一。用学校教务系统的帐号登录即可开始使用。
+下载：http://www.coolapk.com/apk/com.by_syk.schttable"</string>
 
 </resources>

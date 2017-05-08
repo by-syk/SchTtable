@@ -29,7 +29,8 @@ import retrofit2.Response;
  * Created by By_syk on 2017-02-17.
  */
 
-public class AboutFragment extends PreferenceFragment implements Preference.OnPreferenceClickListener {
+public class AboutFragment extends PreferenceFragment
+        implements Preference.OnPreferenceClickListener, Preference.OnPreferenceChangeListener {
     private Preference prefServer;
 
     private static final String PREFERENCE_WELCOME = "welcome";
@@ -90,17 +91,10 @@ public class AboutFragment extends PreferenceFragment implements Preference.OnPr
         prefApply.setOnPreferenceClickListener(this);
         prefServer.setOnPreferenceClickListener(this);
         prefContact.setOnPreferenceClickListener(this);
-        prefDonate.setOnPreferenceClickListener(this);
+        prefDonate.setOnPreferenceChangeListener(this);
         prefPrivacy.setOnPreferenceClickListener(this);
 
-        String summary = AboutMsgRender.parseCode(getString(R.string.preference_summary_contact));
-        if (!TextUtils.isEmpty(summary)) {
-            prefContact.setSummary(summary);
-        }
-        summary = AboutMsgRender.parseCode(getString(R.string.preference_summary_donate));
-        if (!TextUtils.isEmpty(summary)) {
-            prefDonate.setSummary(summary);
-        }
+        prefContact.setSummary(AboutMsgRender.parseCode(getString(R.string.preference_summary_contact)));
     }
 
     @Override
@@ -122,12 +116,18 @@ public class AboutFragment extends PreferenceFragment implements Preference.OnPr
                 AboutMsgRender.executeCode(getActivity(),
                         getString(R.string.preference_summary_contact));
                 break;
-            case PREFERENCE_DONATE:
-                AboutMsgRender.executeCode(getActivity(),
-                        getString(R.string.preference_summary_donate));
-                break;
             case PREFERENCE_PRIVACY:
                 (new PrivacyDialog()).show(getFragmentManager(), "privacyDialog");
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object o) {
+        switch (preference.getKey()) {
+            case PREFERENCE_DONATE:
+                AboutMsgRender.executeCode(getActivity(), (String) o);
                 break;
         }
         return true;

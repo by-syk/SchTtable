@@ -29,7 +29,15 @@ public class DonateDialog extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                 .setMessage(message)
-                .setPositiveButton(R.string.dlg_bt_ok, null);
+                .setPositiveButton(R.string.dlg_bt_to_donate, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        sp.save("donated", true);
+                        // 如果是主界面，通知隐藏捐赠菜单项
+                        getActivity().invalidateOptionsMenu();
+                        AboutMsgRender.executeCode(getActivity(), getString(R.string.donate_code_alipay));
+                    }
+                });
 
         sp = new SP(getActivity(), false);
         if (!sp.getBoolean("donated")) {
