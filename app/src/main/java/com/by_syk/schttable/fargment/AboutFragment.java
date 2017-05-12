@@ -151,6 +151,10 @@ public class AboutFragment extends PreferenceFragment
         call.enqueue(new Callback<ResResBean<WatchDogBean>>() {
             @Override
             public void onResponse(Call<ResResBean<WatchDogBean>> call, Response<ResResBean<WatchDogBean>> response) {
+                if (!isAdded()) {
+                    return;
+                }
+
                 ResResBean<WatchDogBean> resResBean = response.body();
                 if (resResBean == null || !resResBean.isStatusSuccess()) {
                     prefServer.setSummary(R.string.server_status_down);

@@ -68,6 +68,7 @@ public class HtmlTimetableActivity extends Activity {
         webSettings.setBuiltInZoomControls(true);
         webSettings.setDisplayZoomControls(false);
         webSettings.setDefaultTextEncodingName("utf-8");
+        webSettings.setJavaScriptEnabled(true);
     }
 
     private class LoadTimetableHtmlTask extends AsyncTask<Boolean, Integer, File> {
